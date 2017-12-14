@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript 基础2 | Allen&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="潘栋民" />
+  
+  <meta name="description" content="基础2目录  变量    数据类型    操作符    变量与变量相对的是常量，常量是不可改变的，例如1就是1，2就是2。变量是可以改变的，例如数学里的x、y。定义一个变量1234&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;	var x;//定义一个变量">
+<meta name="keywords" content="前端,基础,javaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 基础2">
+<meta property="og:url" content="http://allen.men/2017/03/29/basis2/index.html">
+<meta property="og:site_name" content="Allen&#39;s Blog">
+<meta property="og:description" content="基础2目录  变量    数据类型    操作符    变量与变量相对的是常量，常量是不可改变的，例如1就是1，2就是2。变量是可以改变的，例如数学里的x、y。定义一个变量1234&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;	var x;//定义一个变量	var y = 10; //定义的同时声明变量 &amp;lt;/script&amp;gt; 上面的x、y就是变量，x还没有声明">
+<meta property="og:updated_time" content="2017-12-14T09:39:05.652Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript 基础2">
+<meta name="twitter:description" content="基础2目录  变量    数据类型    操作符    变量与变量相对的是常量，常量是不可改变的，例如1就是1，2就是2。变量是可以改变的，例如数学里的x、y。定义一个变量1234&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;	var x;//定义一个变量	var y = 10; //定义的同时声明变量 &amp;lt;/script&amp;gt; 上面的x、y就是变量，x还没有声明">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Allen&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Allen&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        It&#39;s never too old to learn
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="home"  href="//allen.men">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/allen151">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="https://weibo.com/allen151">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//404.html">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                        <a title="Google" target="_blank" href="//allen.men/404.html">
+                            <i class="fa fa-google fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-basis2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      JavaScript 基础2
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/NodeJs/">NodeJs</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-03-29
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h1 id="基础2"><a href="#基础2" class="headerlink" title="基础2"></a>基础2</h1><p>目录</p>
+<ul>
+<li><p>变量  </p>
+</li>
+<li><p>数据类型  </p>
+</li>
+<li><p>操作符</p>
+</li>
+</ul>
+<hr>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>与变量相对的是常量，常量是不可改变的，例如1就是1，2就是2。变量是可以改变的，例如数学里的x、y。<br><strong>定义一个变量</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	<span class="keyword">var</span> x;<span class="comment">//定义一个变量</span></span><br><span class="line">	<span class="keyword">var</span> y = <span class="number">10</span>; <span class="comment">//定义的同时声明变量 </span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上面的x、y就是变量，x还没有声明值，系统默认它的值是Null。<br>JS中变量声明时并不用指定数据类型，因为JS是弱类型语言，意思是说每种数据类型间可以随意转换。在数据类型中我们再详细说明。<br>那这时候问题就来了——应该怎么定义一个变量名呢？<br><strong>变量名的规则</strong>  </p>
+<blockquote>
+<p>变量必须以字母开头<br>变量也能以 $ 和 _ 符号开头（不过我们不推荐这么做）<br>变量名称对大小写敏感（y 和 Y 是不同的变量）    </p>
+</blockquote>
+<p>选择变量名的时候，尽量选择能明其意的英语单词，用驼峰式命名。<br>例如：myName、myPassword。之类，首单词小写，后面每个单词的首字母都是大写。</p>
+<hr>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p><strong>JS的弱类型语言，不用指定变量的数据类型。</strong><br>但是JS还是有几种基本的数据类型的，我们还是要好好认识一下它们。<br>在java中，字符串类型的变量我们是这样定义的<code>String a = &quot;myname&quot; ;</code>，在JS中不用这么麻烦，我们直接定义<code>var a = &quot;myname&quot; ;</code>，就行了，不用指定类型。<br>在java中，如果我们想改变a的值为数字类型<code>a = 10 ;</code>就会报错，在JS中完全不用担心这个问题，因为JavaScript 拥有<strong>动态类型</strong><br><del>下面我们开始学习各种数据类型吧</del><br><del><strong>基本数据类型</strong></del></p>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	<span class="keyword">var</span> myName = <span class="string">"Allen151"</span> ;<span class="comment">//字符串要用引号括起来</span></span><br><span class="line">	<span class="built_in">document</span>.write(<span class="string">"you name:"</span>+myName);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">```  </span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">### 数字  </span></span><br><span class="line"><span class="regexp">```javascript</span></span><br><span class="line"><span class="regexp">&lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">	var myAge = 20 ;//数字类型不用括起来</span></span><br><span class="line"><span class="string">	document.write("</span>you age:<span class="string">"+myAge);</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h3><p>布尔值只有两个值，true或false。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	<span class="keyword">var</span> no = <span class="literal">false</span> ;</span><br><span class="line">	<span class="keyword">var</span> yes = <span class="literal">true</span> ; </span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Null"><a href="#Null" class="headerlink" title="Null"></a>Null</h3><p>如果你只是声明一个对象，没有赋值，这个对象的值就是Null。</p>
+<h3 id="Undefined"><a href="#Undefined" class="headerlink" title="Undefined"></a>Undefined</h3><p>如果你还没声明该对象，该对象的类型就是undefined.<br><strong>各种数据类型间可以相互转换</strong><br>如下所示，myName声明时赋值了字符串，后来可以改成数字。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	<span class="keyword">var</span> myName = <span class="string">"Allen"</span> ;</span><br><span class="line">	myName = <span class="number">10</span> ;</span><br><span class="line">	alert(myName);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><del><strong>引用数据类型</strong></del></p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><ul>
+<li>实例化对象声明数组<br><code>new Array(2)</code>括号里的2是指数组的长度，但是超出数组长度也不会报错。第一个数组是从零开始数的，这一点容易忽略。  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	<span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">2</span>);<span class="comment">//声明一个数组</span></span><br><span class="line">	a[<span class="number">0</span>] = <span class="number">1</span> ;<span class="comment">//分别为数组的各个元素赋值</span></span><br><span class="line">	a[<span class="number">1</span>] = <span class="number">2</span> ;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;a.length;i++)&#123;<span class="comment">//循环输出各个数值</span></span><br><span class="line">		<span class="built_in">document</span>.write(a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">```  </span></span><br><span class="line"><span class="regexp">- 声明的同时赋值  </span></span><br><span class="line"><span class="regexp">也可以在声明的同时赋值，这时候括号里的内容跟上面说的就不同了。</span></span><br><span class="line"><span class="regexp">```javascript</span></span><br><span class="line"><span class="regexp">&lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">	var a = new Array("</span><span class="number">1</span><span class="string">","</span><span class="number">2</span><span class="string">");</span></span><br><span class="line"><span class="string">	for(var i=0;i&lt;a.length;i++)&#123;//循环输出各个数值</span></span><br><span class="line"><span class="string">		document.write(a[i]);</span></span><br><span class="line"><span class="string">	&#125;</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br><span class="line"><span class="string">```  </span></span><br><span class="line"><span class="string">- 中括号声明法  </span></span><br><span class="line"><span class="string">这种方法比较简洁，一个中括号就代组是一个数组，后面将学习到一个大括号代表一个数组。</span></span><br><span class="line"><span class="string">```javascript</span></span><br><span class="line"><span class="string">&lt;script type="</span>text/javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">	var a = ["</span><span class="number">1</span><span class="string">","</span><span class="number">2</span><span class="string">"] ;</span></span><br><span class="line"><span class="string">	for(var i=0;i&lt;a.length;i++)&#123;//循环输出各个数值</span></span><br><span class="line"><span class="string">		document.write(a[i]);</span></span><br><span class="line"><span class="string">	&#125;</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><p><strong>用大括号声明对象</strong><br>对象有一定的属性，属性有一定的值，语法格式看代码。以下还有两种取得属性的方法。学习对象的时候再深入学习。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	<span class="comment">//声明一个对象，并且赋值</span></span><br><span class="line">	<span class="keyword">var</span> me = &#123;<span class="attr">myName</span>:<span class="string">"Allen151"</span>,<span class="attr">myAge</span>:<span class="number">20</span>,<span class="attr">myNumber</span>:<span class="string">"123456789"</span>&#125; ;</span><br><span class="line">	<span class="comment">//获取对象的属性和值，这里用到两种方法</span></span><br><span class="line">	<span class="built_in">document</span>.write(<span class="string">"姓名："</span>+me.myName+<span class="string">"、年龄："</span>+me[<span class="string">"myAge"</span>]+<span class="string">"、电话："</span>+me.myNumber);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h2><h3 id="加减号操作符"><a href="#加减号操作符" class="headerlink" title="加减号操作符"></a>加减号操作符</h3><ul>
+<li><p>递增：<br>两个加号在后面的，是执行完整个语句后num才加1.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	<span class="keyword">var</span> num = <span class="number">2</span>;<span class="comment">//定义一个变量</span></span><br><span class="line">	alert(num ++ );<span class="comment">//2</span></span><br><span class="line">	alert(num);<span class="comment">//3</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">```  </span></span><br><span class="line"><span class="regexp">两个加号在前面的，num先加1再执行整个语句。</span></span><br><span class="line"><span class="regexp">```javascript</span></span><br><span class="line"><span class="regexp">&lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">	var num = 2;//定义一个变量</span></span><br><span class="line"><span class="string">	alert(++ num );//3</span></span><br><span class="line"><span class="string">	alert(num);//3</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br><span class="line"><span class="string">```  </span></span><br><span class="line"><span class="string">- 递减与递增同理  </span></span><br><span class="line"><span class="string">参考递增  </span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">- 一元加和一元减  </span></span><br><span class="line"><span class="string">  1.一元加  </span></span><br><span class="line"><span class="string">    除了有数学课本上的作用外，还有：  </span></span><br><span class="line"><span class="string">    ```javascript</span></span><br><span class="line"><span class="string">    &lt;script type="</span>text/javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">	//定义各种变量</span></span><br><span class="line"><span class="string">	var s1 = "</span><span class="number">01</span><span class="string">" ;</span></span><br><span class="line"><span class="string">	var s2 = "</span><span class="number">1.1</span><span class="string">" ;</span></span><br><span class="line"><span class="string">	var s3 = "</span>z<span class="string">" ; </span></span><br><span class="line"><span class="string">	var b = false ;</span></span><br><span class="line"><span class="string">	var f = 1.1 ;</span></span><br><span class="line"><span class="string">	var o = &#123;</span></span><br><span class="line"><span class="string">		valueOf: function()&#123;</span></span><br><span class="line"><span class="string">			return -1 ;</span></span><br><span class="line"><span class="string">		&#125;</span></span><br><span class="line"><span class="string">	&#125;</span></span><br><span class="line"><span class="string">	//+号对其操作后的结果</span></span><br><span class="line"><span class="string">	s1 = +s1 ; //值变为1</span></span><br><span class="line"><span class="string">	s2 = +s2 ; //值变为1.1</span></span><br><span class="line"><span class="string">	s3 = +s3 ; //值变为NaN</span></span><br><span class="line"><span class="string">	b = +b ; //值为0</span></span><br><span class="line"><span class="string">	f = +f ; //值为1.1</span></span><br><span class="line"><span class="string">	o = +o ; //值变为-1</span></span><br><span class="line"><span class="string">	&lt;/script&gt;</span></span><br><span class="line"><span class="string">    ```  </span></span><br><span class="line"><span class="string">    重点注意+号用于类型的转换  </span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    2.一元减  </span></span><br><span class="line"><span class="string">      减号用于表示负数，而当应用于非数值时也有一元加类型的作用，进行类型转换，但注意，最后得到的是负数。  </span></span><br><span class="line"><span class="string">    ```javascript</span></span><br><span class="line"><span class="string">    &lt;script type="</span>text/javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">	//定义各种变量</span></span><br><span class="line"><span class="string">	var s1 = "</span><span class="number">01</span><span class="string">" ;</span></span><br><span class="line"><span class="string">	var s2 = "</span><span class="number">1.1</span><span class="string">" ;</span></span><br><span class="line"><span class="string">	var s3 = "</span>z<span class="string">" ; </span></span><br><span class="line"><span class="string">	var b = false ;</span></span><br><span class="line"><span class="string">	var f = 1.1 ;</span></span><br><span class="line"><span class="string">	var o = &#123;</span></span><br><span class="line"><span class="string">		valueOf: function()&#123;</span></span><br><span class="line"><span class="string">			return -1 ;</span></span><br><span class="line"><span class="string">		&#125;</span></span><br><span class="line"><span class="string">	&#125;</span></span><br><span class="line"><span class="string">	//+号对其操作后的结果</span></span><br><span class="line"><span class="string">	s1 = -s1 ; //值变为-1</span></span><br><span class="line"><span class="string">	s2 = -s2 ; //值变为-1.1</span></span><br><span class="line"><span class="string">	s3 = -s3 ; //值变为NaN</span></span><br><span class="line"><span class="string">	b = -b ; //值为0</span></span><br><span class="line"><span class="string">	f = -f ; //值为-1.1</span></span><br><span class="line"><span class="string">	o = -o ; //值变为1</span></span><br><span class="line"><span class="string">	&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>位操作符<br>本来是不想写这部分的内容，因为感觉用的比较少，表达起来也比较费劲。后来想了一下，内容还是挺有意思的嘛！！<br>位操作符用于在最基本的层次上，即按内存中表示数值的位来操作数值。速度会更快。<br>让我们先学习一下二进制，正数的二进制与十进制的转换比较简单：  </p>
+<ul>
+<li>二进制转换成十进制，从右边开始写，2的对应次方乘以对应位的数值相加。</li>
+<li>十进制转换成二进制，十进制的最小公约数。</li>
+<li>负数的二进制，数值的二进制的反码加一。反码：对二进制的1与0互换。  </li>
+<li>按位非(NOT)<br>按位非操作符由一个波浪线表示，返回的是数值的反码，参考负数的二进制比较，相当于操作数的负数减1，虽然这么干得到的结果一样，但是用按位非运行速度会更快。   <pre><code class="javascript">&lt;script type=<span class="string">"text/javascript"</span>&gt;
+<span class="keyword">var</span> num1 = <span class="number">25</span> ; <span class="comment">//二进制：11001</span>
+<span class="keyword">var</span> num2 = ~num1 ;<span class="comment">//-11002</span>
+alert(num2);<span class="comment">//-26</span>
+&lt;<span class="regexp">/script&gt;</span>
+</code></pre>
+<ul>
+<li>按位与跟按位或跳过不说了</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>布尔操作符  <ul>
+<li>逻辑非<br>用一个感叹号表示，对操作数取相反值。<br>以下是一个示例  <pre><code class="javascript">&lt;script type=<span class="string">"text/javascript"</span>&gt;
+alert(!<span class="literal">false</span>); <span class="comment">//true</span>
+alert(!<span class="string">"blue"</span>); <span class="comment">//false</span>
+alert(!<span class="number">0</span>);    <span class="comment">//true</span>
+alert(!<span class="literal">NaN</span>); <span class="comment">//true</span>
+alert(!<span class="string">""</span>); <span class="comment">//true</span>
+alert(!<span class="number">123456</span>); <span class="comment">//false</span>
+&lt;<span class="regexp">/script&gt;</span>
+</code></pre>
+</li>
+<li>扯<br>写到这里，发现这么干真的很费时费力，也不知道这样子干有没有用，对我有没有用。  </li>
+<li>逻辑与(&amp;&amp;/&amp;)<br>两个&amp;&amp;执行得比较智能，一个&amp;就不智能，前后两个代码都执行。  </li>
+<li>逻辑或<br>与逻辑与相似<br>偷懒一下，写得简洁一点，也不知道这样好不好。  </li>
+</ul>
+</li>
+<li>乘性操作符  <ul>
+<li>乘法<br>用*号表示乘法，作用跟数学里的差不多。  </li>
+<li>除法<br>用/号表示，作用跟数学里的差不多。  </li>
+<li>求模<br>求模就是求两个数相除的余数，用%号操作。  </li>
+</ul>
+</li>
+<li>加性操作符<br>1.加法<br>  有数学里的功能，也有+号进行数据类型转换的功能，参照上面说的+号对数据类型的转换。<br>2.减法<br>  减法就没那么复杂，有数学里的功能，如果遇到非数字类型，结果就是NaN。  </li>
+<li>关系操作符<br>小于(&lt;)、大于(&gt;)、小于等于(&lt;=)和大于等于(&gt;=)这几个关系操作符，这几个操作的返回值都是布尔值。  </li>
+<li>相等操作符<br>1.等于<br>  一个等号是赋值，这一点容易弄错。两个等号才是比较是否相等。这里有个问题，两个等号才是比较值是否相等，会将数据类型不一样的两个比较数进行转换，然后再比较。<br>2.强制等于<br>  是由三个等号表示的，两个比较数的数据类型不同的时候不再进行转换，直接返回false。所以这个比较是要数值和数据类型都相等才是相等。<br>3.不等<br>  不等是用一个感叹号加一个等号组成，判断两个数值是否相等，如果相等返回false，如果不相等就返回true。  </li>
+<li>条件操作符<br>条件操作符也就是三目运算，格式<code>var a = 判断语句 ? 语句1: 语句2</code>如果判断语句为true，则将语句1赋值给a，如果判断语句为false，则将语句2赋值给a。  </li>
+<li>赋值操作符  <ul>
+<li>单个赋值符<br>  赋值操作符有很多种，等号是最常见的，将右边的值赋值给左边的变量。  </li>
+<li>复合赋值符<br>复合赋值符由两个符号组成，如<code>var a += 1 ;</code>，意思是将a加1后的结果再赋值给a，其他符号也类型，不作重复介绍了。  </li>
+</ul>
+</li>
+<li>逗号操作符<br>我们可以这样声明变量<code>var a=10,b=20;</code>不常用，我也不知道应该怎么说，慢慢体会。</li>
+</ul>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<li><p>ECMAScript中的基本数据类型包括Undefined、Null、Boolean、Number、和String.   </p>
+</li>
+<li><p>与其他语言不同，ECMAScript没有整数和浮点数值之分，用Number类型就可以表示所有数值。  </p>
+</li>
+<li><p>ECMAScript中也有一种复杂的数据类型，即Object类型，该类型是这门语言中所有对象的基础类型。  </p>
+</li>
+<li><p>严格模式为这门语言容易出错的地方加了限制。  </p>
+</li>
+<li><p>ECMAScript提供了许多与C及其他类C语言中相同的基本操作符，包括算术操作符、布尔操作符、关系操作符、相等操作符及赋值操作符等。</p>
+</li>
+</ol>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年12月14日 17:39</p>
+        <p>原始链接： <a class="post-url" href="/2017/03/29/basis2/" title="JavaScript 基础2">http://allen.men/2017/03/29/basis2/</a></p>
+        <footer>
+            <a href="http://allen.men">
+                <img src="/images/logo.png" alt="Allen">
+                Allen
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        收钱就是兴奋
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://allen.men/2017/03/29/basis2/&title=《JavaScript 基础2》 — Allen's Blog&pic=http://allen.menimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://allen.men/2017/03/29/basis2/&title=《JavaScript 基础2》 — Allen's Blog&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://allen.men/2017/03/29/basis2/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaScript 基础2》 — Allen's Blog&url=http://allen.men/2017/03/29/basis2/&via=http://allen.men" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://allen.men/2017/03/29/basis2/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://allen.men/2017/03/29/basis2/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/前端/" class="color3">前端</a>
+      
+    <a href="/tags/基础/" class="color3">基础</a>
+      
+    <a href="/tags/javaScript/" class="color1">javaScript</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基础2"><span class="post-toc-text">基础2</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#变量"><span class="post-toc-text">变量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据类型"><span class="post-toc-text">数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字符串"><span class="post-toc-text">字符串</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#布尔值"><span class="post-toc-text">布尔值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Null"><span class="post-toc-text">Null</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Undefined"><span class="post-toc-text">Undefined</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数组"><span class="post-toc-text">数组</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对象"><span class="post-toc-text">对象</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#操作符"><span class="post-toc-text">操作符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#加减号操作符"><span class="post-toc-text">加减号操作符</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-text">总结</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2017/03/29/basis3/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          JavaScript 语句/函数
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2017/03/29/blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">在GitHub上使用Hexo搭建个人博客</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        simple is <a href="http://allen.men/404.html" target="_blank">beautiful</a> |
+        My name is <a href="//github.com/Allen151" target="_blank">潘栋民</a>
+      &copy; 2017 Allen<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://allen.men",
+      animate: false,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/JavaScript/">JavaScript</a><a class="category-link" href="/categories/NodeJs/">NodeJs</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/基础/" style="font-size: 20px;">基础</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/基础/" style="font-size: 20px;">基础</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>

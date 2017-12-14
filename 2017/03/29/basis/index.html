@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript 基础1 | Allen&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="潘栋民" />
+  
+  <meta name="description" content="基础1这样的命名可能不能明其意，但是根据这个顺序学习JS的基础知识就对了。这一节里简单地告诉你JS可以做一些什么，是很基本很普通的，因为JS能干的事情太多了。太复杂的事情现在我也还说不清楚，如果你喜欢看复杂的事情，可以直接跳到最后看JS的实例。  闲聊昨晚在简书上看到一篇关于面试的文章，一位成电大的学生毕业找工作，随便">
+<meta name="keywords" content="前端,基础,javaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 基础1">
+<meta property="og:url" content="http://allen.men/2017/03/29/basis/index.html">
+<meta property="og:site_name" content="Allen&#39;s Blog">
+<meta property="og:description" content="基础1这样的命名可能不能明其意，但是根据这个顺序学习JS的基础知识就对了。这一节里简单地告诉你JS可以做一些什么，是很基本很普通的，因为JS能干的事情太多了。太复杂的事情现在我也还说不清楚，如果你喜欢看复杂的事情，可以直接跳到最后看JS的实例。  闲聊昨晚在简书上看到一篇关于面试的文章，一位成电大的学生毕业找工作，随便就能得到国内科技巨头的offer。也许你们不赞同我说这种话，可能也许只有他有这么">
+<meta property="og:updated_time" content="2017-12-14T09:38:53.494Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript 基础1">
+<meta name="twitter:description" content="基础1这样的命名可能不能明其意，但是根据这个顺序学习JS的基础知识就对了。这一节里简单地告诉你JS可以做一些什么，是很基本很普通的，因为JS能干的事情太多了。太复杂的事情现在我也还说不清楚，如果你喜欢看复杂的事情，可以直接跳到最后看JS的实例。  闲聊昨晚在简书上看到一篇关于面试的文章，一位成电大的学生毕业找工作，随便就能得到国内科技巨头的offer。也许你们不赞同我说这种话，可能也许只有他有这么">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Allen&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Allen&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        It&#39;s never too old to learn
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="home"  href="//allen.men">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/allen151">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="https://weibo.com/allen151">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//404.html">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                        <a title="Google" target="_blank" href="//allen.men/404.html">
+                            <i class="fa fa-google fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-basis" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      JavaScript 基础1
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/NodeJs/">NodeJs</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-03-29
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h1 id="基础1"><a href="#基础1" class="headerlink" title="基础1"></a>基础1</h1><p>这样的命名可能不能明其意，但是根据这个顺序学习JS的基础知识就对了。<br>这一节里简单地告诉你JS可以做一些什么，是很基本很普通的，因为JS能干的事情太多了。太复杂的事情现在我也还说不清楚，如果你喜欢看复杂的事情，可以直接跳到最后看JS的实例。</p>
+<hr>
+<h2 id="闲聊"><a href="#闲聊" class="headerlink" title="闲聊"></a>闲聊</h2><p><b>昨晚在简书上看到一篇关于面试的文章，一位成电大的学生毕业找工作，随便就能得到国内科技巨头的offer。也许你们<span style="color:red">不赞同</span>我说这种话，可能也许只有他有这么个能力。</b>说到很多种技术的时候，他的回答是：“我没有花很多时间去学习呀，只是上课的时候听一下老师的课！”可能这就是大学的差距，如果你们以为我这样就对自己的学校没信心，那就错了。<br>这样子只会让我更加努力地自学。后面还有很多技术等着我去学习，我要加快我的学习速度。我还要搭建我自己的博客……。<br>昨晚躺在床上想了很久，感触颇多，有很多话要讲，今天早上还记得一些。8点钟接到毕业的师兄的电话，让我去趟他宿舍，搜刮风扇等生活用品。一去就是半天。回来就什么都不记得了，暂时就不说了吧，反正我后面会好好学习。不能让毕业就失业。</p>
+<hr>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><h3 id="操作HTML"><a href="#操作HTML" class="headerlink" title="操作HTML"></a>操作HTML</h3><p><strong>JS可以改变html标签里面的内容</strong>  </p>
+<hr>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"content"</span>&gt;</span>旧的内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.getElementById(<span class="string">"content"</span>).innerHTML = <span class="string">"新的内容"</span>;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">  ```  </span><br><span class="line">  `document.getElementById()`这个方法在后面会经常用到，现在还不明白无所谓，最重要的是不要让看到不明白的代码打击你们的信心。这句代码的意思是说取得id="content"的元素，操作元素的内容，把"新的内容"赋值给对象内容，对象的旧内容就改变了。最终浏览器显示的是新的内容。  </span><br><span class="line">  </span><br><span class="line">---</span><br><span class="line">**JS向文档里写入HTML**</span><br><span class="line">```html</span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"content"</span>&gt;</span>旧的内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="built_in">document</span>.write(<span class="string">"&lt;h1&gt;我是新内容&lt;/h1&gt;"</span>);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">```  </span><br><span class="line">这种做法有点特别，JS将完整的HTML语句写进文档，浏览器会自动地识别解析HTML语句。</span><br><span class="line"></span><br><span class="line">---  </span><br><span class="line">**document.write()的超能力**</span><br><span class="line">```html</span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"content"</span>&gt;</span>旧的内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"fun()"</span>&gt;</span>PressMe<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">		<span class="built_in">document</span>.write(<span class="string">"Hello World!!"</span>);</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">```  </span><br><span class="line">如果整个文档加载完成了，再调用`document.write();`整个 HTML 页面将被覆盖。这能力够强吧！</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 语句  </span><br><span class="line">**JavaScript 语句**</span><br><span class="line">&gt;JavaScript 语句向浏览器发出的命令。语句的作用是告诉浏览器该做什么。</span><br><span class="line"> </span><br><span class="line">**分号**  </span><br><span class="line">&gt;在JS中，分号是可选的，但是推荐尽量使用分号结束语句。  </span><br><span class="line"></span><br><span class="line">**JS代码**  </span><br><span class="line">&gt;浏览器会按照编写顺序来执行每条语句。  </span><br><span class="line"></span><br><span class="line">**JavaScript 代码块**  </span><br><span class="line">&gt;JavaScript 语句通过代码块的形式进行组合。  </span><br><span class="line">块由左花括号开始，由右花括号结束。  </span><br><span class="line">块的作用是使语句序列一起执行。  </span><br><span class="line">JavaScript 函数是将语句组合在块中的典型例子。  </span><br><span class="line"></span><br><span class="line">**JavaScript 对大小写敏感。**  </span><br><span class="line">&gt;JavaScript 对大小写是敏感的。  严格区分大小写。  </span><br><span class="line">当编写 JavaScript 语句时，请留意是否关闭大小写切换键。</span><br><span class="line"></span><br><span class="line">**空格**  </span><br><span class="line">&gt;JavaScript会忽略多余的空格。您可以向脚本添加空格，来提高其可读性。</span><br><span class="line"></span><br><span class="line">**JavaScript 是脚本语言。**  </span><br><span class="line">&gt;浏览器会在读取代码时，逐行地执行脚本代码。  </span><br><span class="line">而对于传统编程来说，会在执行前对所有代码进行编译。</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">### 注释</span><br><span class="line">我们通过增加注释来解释代码，或通过注释来提高代码的可读性。  </span><br><span class="line">**单行注释**  </span><br><span class="line">```javascript</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">//我是一个方法</span></span></span><br><span class="line"><span class="javascript">		<span class="built_in">document</span>.write(<span class="string">"Hello World!!"</span>);</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">```  </span><br><span class="line">**多行注释** </span><br><span class="line">```javascript</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">/*</span></span><br><span class="line"><span class="undefined">	这是个多行注释</span></span><br><span class="line"><span class="undefined">	是用来作一些重要说明的</span></span><br><span class="line"><span class="undefined">	以下这个方法，点击按钮时调用</span></span><br><span class="line"><span class="undefined"> */</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="comment">//我是一个方法</span></span></span><br><span class="line"><span class="javascript">		<span class="built_in">document</span>.write(<span class="string">"Hello World!!"</span>);</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>总结：</strong>  </p>
+<ul>
+<li>JS对象HTML的一些基本的操作  </li>
+<li>JS语句的一些特点，有些不同于其他的编程语言特性  </li>
+<li>JS的注释</li>
+</ul>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年12月14日 17:38</p>
+        <p>原始链接： <a class="post-url" href="/2017/03/29/basis/" title="JavaScript 基础1">http://allen.men/2017/03/29/basis/</a></p>
+        <footer>
+            <a href="http://allen.men">
+                <img src="/images/logo.png" alt="Allen">
+                Allen
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        收钱就是兴奋
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://allen.men/2017/03/29/basis/&title=《JavaScript 基础1》 — Allen's Blog&pic=http://allen.menimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://allen.men/2017/03/29/basis/&title=《JavaScript 基础1》 — Allen's Blog&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://allen.men/2017/03/29/basis/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaScript 基础1》 — Allen's Blog&url=http://allen.men/2017/03/29/basis/&via=http://allen.men" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://allen.men/2017/03/29/basis/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://allen.men/2017/03/29/basis/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/前端/" class="color3">前端</a>
+      
+    <a href="/tags/基础/" class="color3">基础</a>
+      
+    <a href="/tags/javaScript/" class="color1">javaScript</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基础1"><span class="post-toc-text">基础1</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#闲聊"><span class="post-toc-text">闲聊</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目录"><span class="post-toc-text">目录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#操作HTML"><span class="post-toc-text">操作HTML</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2017/03/29/variable/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          变量可以包含的数值类型
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2017/03/29/basis3/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">JavaScript 语句/函数</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        simple is <a href="http://allen.men/404.html" target="_blank">beautiful</a> |
+        My name is <a href="//github.com/Allen151" target="_blank">潘栋民</a>
+      &copy; 2017 Allen<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://allen.men",
+      animate: false,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/JavaScript/">JavaScript</a><a class="category-link" href="/categories/NodeJs/">NodeJs</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/基础/" style="font-size: 20px;">基础</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/基础/" style="font-size: 20px;">基础</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>

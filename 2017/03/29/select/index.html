@@ -3,18 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>cover_picture | Allen&#39;s Blog</title>
+  <title>下拉框事件 | Allen&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="潘栋民" />
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="cover_picture">
-<meta property="og:url" content="http://allen.men/cover-picture/index.html">
+  <meta name="description" content="下拉框事件下拉框有个事件，选择其中一项触动change。我们创建一个下拉框。1234567891011&amp;lt;form method=&quot;post&quot;&amp;gt;选择你的城市：	&amp;lt;select id=&quot;city&quot;&amp;gt;		&amp;lt;optio">
+<meta name="keywords" content="前端,基础,javaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="下拉框事件">
+<meta property="og:url" content="http://allen.men/2017/03/29/select/index.html">
 <meta property="og:site_name" content="Allen&#39;s Blog">
-<meta property="og:updated_time" content="2017-11-30T04:24:56.073Z">
+<meta property="og:description" content="下拉框事件下拉框有个事件，选择其中一项触动change。我们创建一个下拉框。1234567891011&amp;lt;form method=&quot;post&quot;&amp;gt;选择你的城市：	&amp;lt;select id=&quot;city&quot;&amp;gt;		&amp;lt;option value=&quot;BJ-北京&quot;&amp;gt;北京&amp;lt;/option&amp;gt;		&amp;lt;option value=&quot;NJ-南京&quot;&amp;gt;南京&amp;lt;/option&amp;">
+<meta property="og:updated_time" content="2017-12-14T09:43:46.743Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="cover_picture">
+<meta name="twitter:title" content="下拉框事件">
+<meta name="twitter:description" content="下拉框事件下拉框有个事件，选择其中一项触动change。我们创建一个下拉框。1234567891011&amp;lt;form method=&quot;post&quot;&amp;gt;选择你的城市：	&amp;lt;select id=&quot;city&quot;&amp;gt;		&amp;lt;option value=&quot;BJ-北京&quot;&amp;gt;北京&amp;lt;/option&amp;gt;		&amp;lt;option value=&quot;NJ-南京&quot;&amp;gt;南京&amp;lt;/option&amp;">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -108,20 +112,27 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-select" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      cover_picture
+      下拉框事件
     </h1>
     <div class="post-title-bar">
       <ul>
           
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/JavaScript/">JavaScript</a>
+                  
+              </li>
+          
         <li>
-          <i class="fa fa-calendar"></i>  2017-11-30
+          <i class="fa fa-calendar"></i>  2017-03-29
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -134,14 +145,17 @@
           
       </header>
     
-    <div class="article-entry " itemprop="articleBody">
+    <div class="article-entry post-content" itemprop="articleBody">
       
             
-            
+            <h1 id="下拉框事件"><a href="#下拉框事件" class="headerlink" title="下拉框事件"></a>下拉框事件</h1><p>下拉框有个事件，选择其中一项触动<code>change</code>。我们创建一个下拉框。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;form method=<span class="string">"post"</span>&gt;</span><br><span class="line">选择你的城市：</span><br><span class="line">	&lt;select id=<span class="string">"city"</span>&gt;</span><br><span class="line">		&lt;option value=<span class="string">"BJ-北京"</span>&gt;北京&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">		&lt;option value="NJ-南京"&gt;南京&lt;/</span>option&gt;</span><br><span class="line">		&lt;option value=<span class="string">"TJ-天津"</span>&gt;天津&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">		&lt;option value="MM-茂名"&gt;茂名&lt;/</span>option&gt;</span><br><span class="line">		&lt;option value=<span class="string">"GZ-广州"</span>&gt;广州&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">		&lt;option value="ZZ-湛江"&gt;湛江&lt;/</span>option&gt;</span><br><span class="line">	&lt;<span class="regexp">/select&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>form&gt;</span><br></pre></td></tr></table></figure></p>
+<p>通过动态绑定事件，得到<code>select</code>下拉框对象，对对对象进行监听，如果有<code>change</code>就输出信息。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	<span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> myCity = <span class="built_in">document</span>.getElementById(<span class="string">"city"</span>);</span><br><span class="line">		myCity.addEventListener(<span class="string">"change"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			alert(<span class="string">"你的城市："</span>+<span class="keyword">this</span>.value);</span><br><span class="line">		&#125;,<span class="literal">false</span>);	</span><br><span class="line">	&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>可以在<a href="http://www.runoob.com" target="_blank" rel="noopener">菜鸟教程</a>上查询要用的方法，熟练查询方法很重要。</p>
+
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2017年11月30日 12:24</p>
-        <p>原始链接： <a class="post-url" href="/cover-picture/index.html" title="cover_picture">http://allen.men/cover-picture/index.html</a></p>
+        <p>最后更新： 2017年12月14日 17:43</p>
+        <p>原始链接： <a class="post-url" href="/2017/03/29/select/" title="下拉框事件">http://allen.men/2017/03/29/select/</a></p>
         <footer>
             <a href="http://allen.men">
                 <img src="/images/logo.png" alt="Allen">
@@ -198,7 +212,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://allen.men/cover-picture/&title=《cover_picture》 — Allen's Blog&pic=http://allen.menimages/logo.png" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://allen.men/2017/03/29/select/&title=《下拉框事件》 — Allen's Blog&pic=http://allen.menimages/logo.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -208,22 +222,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://allen.men/cover-picture/&title=《cover_picture》 — Allen's Blog&source=" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://allen.men/2017/03/29/select/&title=《下拉框事件》 — Allen's Blog&source=" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://allen.men/cover-picture/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://allen.men/2017/03/29/select/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《cover_picture》 — Allen's Blog&url=http://allen.men/cover-picture/&via=http://allen.men" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《下拉框事件》 — Allen's Blog&url=http://allen.men/2017/03/29/select/&via=http://allen.men" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://allen.men/cover-picture/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://allen.men/2017/03/29/select/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -233,7 +247,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://allen.men/cover-picture/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://allen.men/2017/03/29/select/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -242,6 +256,17 @@
         <ul class="article-footer-menu">
             
             
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/前端/" class="color3">前端</a>
+      
+    <a href="/tags/基础/" class="color3">基础</a>
+      
+    <a href="/tags/javaScript/" class="color1">javaScript</a>
+      
+  </li>
+
         </ul>
         
     </footer>
@@ -249,6 +274,32 @@
 </article>
 
 
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#下拉框事件"><span class="post-toc-text">下拉框事件</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2017/03/29/scope/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          执行环境及作用域
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2017/03/29/tab_contrl/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">下拉框选项卡</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
 
 
 

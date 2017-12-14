@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>为表格添加鼠标事件 | Allen&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="潘栋民" />
+  
+  <meta name="description" content="为表格添加鼠标事件这是慕课网的课程中的一个实例，编程练习 制作一个表格，显示班级的学生信息。要求：  鼠标移到不同行上时背景色改为色值为 #f2f2f2，移开鼠标时则恢复为原背景色 #fff 点击添加按钮，能动态在最后添加一行 点击删除按钮，则删除当前行  颜色的变化首先创建一个简单表格，添加一些属性让表格看起来更好看">
+<meta name="keywords" content="前端,基础,javaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为表格添加鼠标事件">
+<meta property="og:url" content="http://allen.men/2017/03/29/tablemouse/index.html">
+<meta property="og:site_name" content="Allen&#39;s Blog">
+<meta property="og:description" content="为表格添加鼠标事件这是慕课网的课程中的一个实例，编程练习 制作一个表格，显示班级的学生信息。要求：  鼠标移到不同行上时背景色改为色值为 #f2f2f2，移开鼠标时则恢复为原背景色 #fff 点击添加按钮，能动态在最后添加一行 点击删除按钮，则删除当前行  颜色的变化首先创建一个简单表格，添加一些属性让表格看起来更好看，每一行表格都有一个a标签添加删除选项，最后一行有id。就是这么一个简单的表格。">
+<meta property="og:updated_time" content="2017-12-14T09:44:24.073Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="为表格添加鼠标事件">
+<meta name="twitter:description" content="为表格添加鼠标事件这是慕课网的课程中的一个实例，编程练习 制作一个表格，显示班级的学生信息。要求：  鼠标移到不同行上时背景色改为色值为 #f2f2f2，移开鼠标时则恢复为原背景色 #fff 点击添加按钮，能动态在最后添加一行 点击删除按钮，则删除当前行  颜色的变化首先创建一个简单表格，添加一些属性让表格看起来更好看，每一行表格都有一个a标签添加删除选项，最后一行有id。就是这么一个简单的表格。">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Allen&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Allen&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        It&#39;s never too old to learn
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="home"  href="//allen.men">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/allen151">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="https://weibo.com/allen151">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//404.html">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                        <a title="Google" target="_blank" href="//allen.men/404.html">
+                            <i class="fa fa-google fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-tablemouse" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      为表格添加鼠标事件
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/JavaScript/">JavaScript</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-03-29
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h1 id="为表格添加鼠标事件"><a href="#为表格添加鼠标事件" class="headerlink" title="为表格添加鼠标事件"></a>为表格添加鼠标事件</h1><p>这是慕课网的课程中的一个实例，<a href="http://www.imooc.com/code/1636" target="_blank" rel="noopener">编程练习</a></p>
+<p>制作一个表格，显示班级的学生信息。<br><strong>要求：</strong></p>
+<ol>
+<li>鼠标移到不同行上时背景色改为色值为 #f2f2f2，移开鼠标时则恢复为原背景色 #fff</li>
+<li>点击添加按钮，能动态在最后添加一行</li>
+<li>点击删除按钮，则删除当前行</li>
+</ol>
+<h2 id="颜色的变化"><a href="#颜色的变化" class="headerlink" title="颜色的变化"></a>颜色的变化</h2><p>首先创建一个简单表格，添加一些属性让表格看起来更好看，每一行表格都有一个<code>a</code>标签添加删除选项，最后一行有<code>id</code>。就是这么一个简单的表格。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">id</span>=<span class="string">"mesTable"</span> <span class="attr">border</span>=<span class="string">"1"</span> <span class="attr">cellspacing</span>=<span class="string">"0"</span> <span class="attr">cellpadding</span>=<span class="string">"5"</span> <span class="attr">bgcolor</span>=<span class="string">"#ddd"</span> <span class="attr">width</span>=<span class="string">"50%"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">tr</span> <span class="attr">id</span>=<span class="string">"headTr"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">th</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">th</span>&gt;</span>年龄<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">th</span>&gt;</span>学历<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">th</span>&gt;</span>操作<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span>张三<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span>18<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span>本科<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span>李四<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span>24<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span>研究生<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span>王五<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span>60<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span>小学<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">tr</span> <span class="attr">id</span>=<span class="string">"oneTr"</span>&gt;</span><span class="comment">&lt;!--这一行表格用来作为添加的副本--&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">``` </span><br><span class="line">下面编写一个方法，接收两个参数，第一个是对象，我们将触动调用这个方法的对象传递入来，也就是一行表格。另一个参数是颜色，要改变后的颜色。这个方法将调用这个方法的对象原来的背景色改变。</span><br><span class="line">```javascript</span><br><span class="line">//改变表格的方法</span><br><span class="line">var changeColor = function(obj, color)&#123;</span><br><span class="line">	obj.bgColor = color ;//不知道Color为什么要大写</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>接下来调用这个方法，有两个事件，一是移进来，二是移出去，分别改成不同的颜色就可以了。：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//变色,获取全部标签，循环遍历各行，绑定事件</span></span><br><span class="line"><span class="keyword">var</span> trChangeColor = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"tr"</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;trChangeColor.length; i++)&#123;</span><br><span class="line">	trChangeColor[i].addEventListener(<span class="string">"mouseover"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		changeColor(<span class="keyword">this</span>, <span class="string">"#fff"</span>);</span><br><span class="line">	&#125;, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">	trChangeColor[i].addEventListener(<span class="string">"mouseout"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		changeColor(<span class="keyword">this</span>, <span class="string">"#ddd"</span>);</span><br><span class="line">	&#125;, <span class="literal">false</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="按钮动态添加一行"><a href="#按钮动态添加一行" class="headerlink" title="按钮动态添加一行"></a>按钮动态添加一行</h2><p>我们重新看一遍下面这个代码，两个元素有<code>id</code>,第一个是表格的最后一行，将来被用来复制的。另一个个是按钮，用来添加事件。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">	<span class="tag">&lt;<span class="name">tr</span> <span class="attr">id</span>=<span class="string">"oneTr"</span>&gt;</span><span class="comment">&lt;!--这一行表格用来作为添加的副本--&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"addTr"</span>&gt;</span>添加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>添加一行的方法如下，将最后一行复制一份出来，再把复制出来的那份添加到表格的最后。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var addTr = function()&#123;</span><br><span class="line">	var newTr = document.getElementById(&quot;oneTr&quot;).cloneNode(true);//将最后一行复制 </span><br><span class="line">	document.getElementById(&quot;mesTable&quot;).appendChild(newTr);//粘贴到表格的最后</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>调用方法，直接调用上面的方法就可以了：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加一行表格</span></span><br><span class="line"><span class="keyword">var</span> addButton = <span class="built_in">document</span>.getElementById(<span class="string">"addTr"</span>) ;</span><br><span class="line">addButton.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	addTr();</span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure></p>
+<h2 id="删除一行表格"><a href="#删除一行表格" class="headerlink" title="删除一行表格"></a>删除一行表格</h2><p>删除表格要用到的方法,<code>obj</code>是删除连接所在的对象，<code>tr</code>是一行的对象，<code>tbody</code>是整个表格对象，用整个表格对象来操作删除一行：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实现删除的方法</span></span><br><span class="line"><span class="keyword">var</span> deleteTr = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> tr=obj.parentNode.parentNode;  <span class="comment">//obj是a的对象，tr是tr的对象</span></span><br><span class="line">	<span class="keyword">var</span> tbody=tr.parentNode;  			<span class="comment">//表格对象</span></span><br><span class="line">	tbody.removeChild(tr);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>调用删除的方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//删除，跟上面同理，调用删除方法</span></span><br><span class="line"><span class="keyword">var</span> trDelete = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"a"</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;trDelete.length; i++)&#123;</span><br><span class="line">	trDelete[i].addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		deleteTr(<span class="keyword">this</span>);</span><br><span class="line">	&#125;, <span class="literal">false</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>写到这里呢，就完成了，总的来说，总是写方法，然后事件触动方法。就这么一个思路。</p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年12月14日 17:44</p>
+        <p>原始链接： <a class="post-url" href="/2017/03/29/tablemouse/" title="为表格添加鼠标事件">http://allen.men/2017/03/29/tablemouse/</a></p>
+        <footer>
+            <a href="http://allen.men">
+                <img src="/images/logo.png" alt="Allen">
+                Allen
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        收钱就是兴奋
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://allen.men/2017/03/29/tablemouse/&title=《为表格添加鼠标事件》 — Allen's Blog&pic=http://allen.menimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://allen.men/2017/03/29/tablemouse/&title=《为表格添加鼠标事件》 — Allen's Blog&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://allen.men/2017/03/29/tablemouse/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《为表格添加鼠标事件》 — Allen's Blog&url=http://allen.men/2017/03/29/tablemouse/&via=http://allen.men" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://allen.men/2017/03/29/tablemouse/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://allen.men/2017/03/29/tablemouse/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/前端/" class="color3">前端</a>
+      
+    <a href="/tags/基础/" class="color3">基础</a>
+      
+    <a href="/tags/javaScript/" class="color1">javaScript</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#为表格添加鼠标事件"><span class="post-toc-text">为表格添加鼠标事件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#颜色的变化"><span class="post-toc-text">颜色的变化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#按钮动态添加一行"><span class="post-toc-text">按钮动态添加一行</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除一行表格"><span class="post-toc-text">删除一行表格</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2017/03/29/tab_contrl/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          下拉框选项卡
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2017/03/01/HelloWorld/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Hello World!</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        simple is <a href="http://allen.men/404.html" target="_blank">beautiful</a> |
+        My name is <a href="//github.com/Allen151" target="_blank">潘栋民</a>
+      &copy; 2017 Allen<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://allen.men",
+      animate: false,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/JavaScript/">JavaScript</a><a class="category-link" href="/categories/NodeJs/">NodeJs</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/基础/" style="font-size: 20px;">基础</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/基础/" style="font-size: 20px;">基础</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hello World! | Allen&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="潘栋民" />
+  
+  <meta name="description" content="Hello World!想不想让自己的JS代码运行在Node.js的服务器上呢？？？Node.js这两年来很火哦，我们要不要一起来学习呢？？？虽然有点迟了，但是我们努力学，一定也是会有收获的，你说呢？？  第一步，安装Node.js 我们可以直接到Node.js官网进行下载，Node.js的版本更新得太快了，最好还是到">
+<meta name="keywords" content="前端,基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hello World!">
+<meta property="og:url" content="http://allen.men/2017/03/01/HelloWorld/index.html">
+<meta property="og:site_name" content="Allen&#39;s Blog">
+<meta property="og:description" content="Hello World!想不想让自己的JS代码运行在Node.js的服务器上呢？？？Node.js这两年来很火哦，我们要不要一起来学习呢？？？虽然有点迟了，但是我们努力学，一定也是会有收获的，你说呢？？  第一步，安装Node.js 我们可以直接到Node.js官网进行下载，Node.js的版本更新得太快了，最好还是到官网下载最新的版本。左边的LTS版本是稳定版本，我们一般使用这个。右边的Curr">
+<meta property="og:image" content="http://image.135editor.com/files/users/223/2239488/201712/Bamvr27v_daOe.png">
+<meta property="og:image" content="http://image.135editor.com/files/users/223/2239488/201712/IqrO9MXT_8k8Z.png">
+<meta property="og:image" content="http://image.135editor.com/files/users/223/2239488/201712/Zjnjbnkq_Nxqd.png">
+<meta property="og:image" content="http://image.135editor.com/files/users/223/2239488/201712/acXwm8gM_fx2P.png">
+<meta property="og:image" content="http://image.135editor.com/files/users/223/2239488/201712/zWq9JqSq_zsIZ.png">
+<meta property="og:updated_time" content="2017-12-14T09:41:55.295Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hello World!">
+<meta name="twitter:description" content="Hello World!想不想让自己的JS代码运行在Node.js的服务器上呢？？？Node.js这两年来很火哦，我们要不要一起来学习呢？？？虽然有点迟了，但是我们努力学，一定也是会有收获的，你说呢？？  第一步，安装Node.js 我们可以直接到Node.js官网进行下载，Node.js的版本更新得太快了，最好还是到官网下载最新的版本。左边的LTS版本是稳定版本，我们一般使用这个。右边的Curr">
+<meta name="twitter:image" content="http://image.135editor.com/files/users/223/2239488/201712/Bamvr27v_daOe.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Allen&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Allen&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        It&#39;s never too old to learn
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="home"  href="//allen.men">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/allen151">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="https://weibo.com/allen151">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//404.html">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                        <a title="Google" target="_blank" href="//allen.men/404.html">
+                            <i class="fa fa-google fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-HelloWorld" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Hello World!
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/JavaScript/">JavaScript</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-03-01
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World!"></a>Hello World!</h1><p><strong>想不想让自己的JS代码运行在Node.js的服务器上呢？？？</strong><br>Node.js这两年来很火哦，我们要不要一起来学习呢？？？虽然有点迟了，但是我们努力学，一定也是会有收获的，你说呢？？ </p>
+<h2 id="第一步，安装Node-js"><a href="#第一步，安装Node-js" class="headerlink" title="第一步，安装Node.js"></a>第一步，安装Node.js</h2><ul>
+<li>我们可以直接到<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js官网</a>进行下载，Node.js的版本更新得太快了，最好还是到官网下载最新的版本。左边的LTS版本是稳定版本，我们一般使用这个。右边的Current是测试版，有时候也用到，因为我们是初学者，那就用左边的吧！！。<br><img src="http://image.135editor.com/files/users/223/2239488/201712/Bamvr27v_daOe.png" _src="http://image.135editor.com/files/users/223/2239488/201712/Bamvr27v_daOe.png" alt="nodejs.png"></li>
+<li>安装软件，直接打开安装包，全程下一步就行了，我们也没必要改安装路径了。  </li>
+<li>测试是否安装成功，运行命令窗口，输入如下指令。 如果结果一样就说明安装成功。<br><img src="http://image.135editor.com/files/users/223/2239488/201712/IqrO9MXT_8k8Z.png" _src="http://image.135editor.com/files/users/223/2239488/201712/IqrO9MXT_8k8Z.png" alt="1.png"></li>
+<li>在c盘找到node.js的安装路径。创建hello.js文件，如下图：<br><img src="http://image.135editor.com/files/users/223/2239488/201712/Zjnjbnkq_Nxqd.png" _src="http://image.135editor.com/files/users/223/2239488/201712/Zjnjbnkq_Nxqd.png" alt="2.png"></li>
+<li><p>hello.js文件里的代码如下：保存好代码。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>) ; <span class="comment">//使用require指令来载入http模块</span></span><br><span class="line"> http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line"> 	<span class="comment">/*此行代码说明</span></span><br><span class="line"><span class="comment">发送Head头部</span></span><br><span class="line"><span class="comment">HTTP状态值：200：OK</span></span><br><span class="line"><span class="comment">内容类型：text/plain</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">res.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">'text/plain'</span>&#125;);</span><br><span class="line">res.write(<span class="string">'Hello World\n'</span>);</span><br><span class="line"> &#125;).listen(<span class="number">1337</span>,<span class="string">'127.0.0.1'</span>);</span><br><span class="line"> <span class="built_in">console</span>.log(<span class="string">'Server running at http://127.0.0.1:1337/'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在hello.js文件的目录下打开命令窗口（因为还没配置环境变量），执行<code>node hello.js</code>命令，结果如下图：<br><img src="http://image.135editor.com/files/users/223/2239488/201712/acXwm8gM_fx2P.png" _src="http://image.135editor.com/files/users/223/2239488/201712/acXwm8gM_fx2P.png" alt="3.png"></p>
+</li>
+<li>不要关闭命令窗口，在浏览器网站栏输入：<a href="http://127.0.0.1:1337/" target="_blank" rel="noopener">http://127.0.0.1:1337/</a> ，你将看到你的第一个node.js代码的hello world!!</li>
+</ul>
+<p><img src="http://image.135editor.com/files/users/223/2239488/201712/zWq9JqSq_zsIZ.png" _src="http://image.135editor.com/files/users/223/2239488/201712/zWq9JqSq_zsIZ.png" alt="4.png"></p>
+<p><strong>我们来讲解一下代码</strong><br>如果你细心观察浏览器的窗口，就会发现127前那个小圆圈在转个不停。意思就是说网页还在加载。加载一段时间后就卡住了。然后再刷新就报错，因为之前的还在加载。这个应该怎么描述我还不懂。我们来解释一下为什么为这样吧。<br><code>http.createServer(function(req,res){</code>这行代码是用<code>http</code>模块创建一个服务，<code>}).listen(1337,&#39;127.0.0.1&#39;);</code>这个的意思是说这个服务对这个端口监听和锁定这个<code>ip</code>，服务里面的代码呢就是<code>res.writeHead(200,{&#39;Content-Type&#39;:&#39;text/plain; charset=utf-8&#39;});</code>这行代码是响应的一些头信息，<code>res.write(&#39;Hello World\n&#39;);</code>最后在文档中写下<code>Hello World</code>。我们写出内容后面加上个<code>res.end(&quot;结束&quot;);</code>请求结束。这时候就不会不停地加载了。<br>我们在写内容之前加上个<code>console.log(&quot;访问成功&quot;);</code>在后台输出提示得到请求。重新运行，刷新，发现后台有两次访问，这不是我们预期的效果。为什么会这样呢，是因为访问一次之后又回头访问。有什么办法解决呢。下面是完整的代码。<br>消除第二次访问，也有结束部分。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>) ; <span class="comment">//使用require指令来载入http模块</span></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">	<span class="comment">/*此行代码说明</span></span><br><span class="line"><span class="comment">  发送Head头部</span></span><br><span class="line"><span class="comment">  HTTP状态值：200：OK</span></span><br><span class="line"><span class="comment">  内容类型：text/plain</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  	res.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">'text/plain; charset=utf-8'</span>&#125;);</span><br><span class="line">  	<span class="keyword">if</span>(req.url!==<span class="string">"/favicon.ico"</span>)&#123;  <span class="comment">//清除第2此访问  </span></span><br><span class="line">	  	<span class="built_in">console</span>.log(<span class="string">"访问成功"</span>);</span><br><span class="line">		res.write(<span class="string">'Hello World\n'</span>);</span><br><span class="line">		res.end(<span class="string">"结束"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;).listen(<span class="number">1337</span>,<span class="string">'127.0.0.1'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Server running at http://127.0.0.1:1337/'</span>);</span><br></pre></td></tr></table></figure></p>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><ul>
+<li>我们学会了安装Node.js  </li>
+<li>我们运行了第一个程序  </li>
+<li>坚持学下去哦！！</li>
+<li>我们调用 http 模块提供的函数： createServer 。这个函数会返回 一个对象，这个对象有一个叫做 listen 的方法，这个方法有一个数值参数， 指定这个 HTTP 服务器监听的端口号。   <h2 id="学习到的新代码"><a href="#学习到的新代码" class="headerlink" title="学习到的新代码"></a>学习到的新代码</h2>node.js真的很好用，以下这部分代码是搭建服务必须的：<br>```javascript<br>var http = require(“http”);</li>
+</ul>
+<p>http.createServer(function(req,res){<br>    res.writeHead(200, {“Content-Type” : “text/plain; charset=utf-8”});<br>    if(req.url!==”/favicon.ico”){//如果请求不是<em>*</em><br>        res.write(“必须”+”\n”);<br>        console.log(“告诉后台访问”);<br>        res.end(“访问结束”);<br>    }<br>}).listen(1337);</p>
+<p>console.log(“Server run at <a href="http://127.0.0.1:1337" target="_blank" rel="noopener">http://127.0.0.1:1337</a>“);<br>```  </p>
+<!--超链接-->
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年12月14日 17:41</p>
+        <p>原始链接： <a class="post-url" href="/2017/03/01/HelloWorld/" title="Hello World!">http://allen.men/2017/03/01/HelloWorld/</a></p>
+        <footer>
+            <a href="http://allen.men">
+                <img src="/images/logo.png" alt="Allen">
+                Allen
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        收钱就是兴奋
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://allen.men/2017/03/01/HelloWorld/&title=《Hello World!》 — Allen's Blog&pic=http://allen.menimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://allen.men/2017/03/01/HelloWorld/&title=《Hello World!》 — Allen's Blog&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://allen.men/2017/03/01/HelloWorld/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hello World!》 — Allen's Blog&url=http://allen.men/2017/03/01/HelloWorld/&via=http://allen.men" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://allen.men/2017/03/01/HelloWorld/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://allen.men/2017/03/01/HelloWorld/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/前端/" class="color3">前端</a>
+      
+    <a href="/tags/基础/" class="color3">基础</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Hello-World"><span class="post-toc-text">Hello World!</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第一步，安装Node-js"><span class="post-toc-text">第一步，安装Node.js</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结："><span class="post-toc-text">总结：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#学习到的新代码"><span class="post-toc-text">学习到的新代码</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2017/03/29/tablemouse/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          为表格添加鼠标事件
+        
+      </span>
+    </a>
+  
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        simple is <a href="http://allen.men/404.html" target="_blank">beautiful</a> |
+        My name is <a href="//github.com/Allen151" target="_blank">潘栋民</a>
+      &copy; 2017 Allen<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://allen.men",
+      animate: false,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/JavaScript/">JavaScript</a><a class="category-link" href="/categories/NodeJs/">NodeJs</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/基础/" style="font-size: 20px;">基础</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/基础/" style="font-size: 20px;">基础</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>

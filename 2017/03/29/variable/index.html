@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>变量可以包含的数值类型 | Allen&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="潘栋民" />
+  
+  <meta name="description" content="变量可以包含的数值类型：基本类型和引用类型JavaScript的变量与其他语言的变量有很大的区别，JavaScript的变量是松散类型，意思是变量名只是在某个时间保存特定的值的一个名称而已。定义一个变量的时候不用指定它以后要用来放置什么类型的数据，随时可以改变，看似是很强大很易用，但是实际上要复杂得多，好好学习一下。 ">
+<meta name="keywords" content="前端,基础,javaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="变量可以包含的数值类型">
+<meta property="og:url" content="http://allen.men/2017/03/29/variable/index.html">
+<meta property="og:site_name" content="Allen&#39;s Blog">
+<meta property="og:description" content="变量可以包含的数值类型：基本类型和引用类型JavaScript的变量与其他语言的变量有很大的区别，JavaScript的变量是松散类型，意思是变量名只是在某个时间保存特定的值的一个名称而已。定义一个变量的时候不用指定它以后要用来放置什么类型的数据，随时可以改变，看似是很强大很易用，但是实际上要复杂得多，好好学习一下。     本文档的目录  基本类型和引用类型的值   动态的属性   复制变量">
+<meta property="og:updated_time" content="2017-12-14T09:44:35.820Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="变量可以包含的数值类型">
+<meta name="twitter:description" content="变量可以包含的数值类型：基本类型和引用类型JavaScript的变量与其他语言的变量有很大的区别，JavaScript的变量是松散类型，意思是变量名只是在某个时间保存特定的值的一个名称而已。定义一个变量的时候不用指定它以后要用来放置什么类型的数据，随时可以改变，看似是很强大很易用，但是实际上要复杂得多，好好学习一下。     本文档的目录  基本类型和引用类型的值   动态的属性   复制变量">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Allen&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Allen&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        It&#39;s never too old to learn
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="home"  href="//allen.men">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/allen151">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="https://weibo.com/allen151">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//404.html">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                        <a title="Google" target="_blank" href="//allen.men/404.html">
+                            <i class="fa fa-google fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-variable" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      变量可以包含的数值类型
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/JavaScript/">JavaScript</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-03-29
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h1 id="变量可以包含的数值类型：基本类型和引用类型"><a href="#变量可以包含的数值类型：基本类型和引用类型" class="headerlink" title="变量可以包含的数值类型：基本类型和引用类型"></a>变量可以包含的数值类型：基本类型和引用类型</h1><p>JavaScript的变量与其他语言的变量有很大的区别，JavaScript的变量是松散类型，意思是变量名只是在某个时间保存特定的值的一个名称而已。定义一个变量的时候不用指定它以后要用来放置什么类型的数据，随时可以改变，看似是很强大很易用，但是实际上要复杂得多，好好学习一下。    </p>
+<p>本文档的目录</p>
+<ul>
+<li>基本类型和引用类型的值  </li>
+<li>动态的属性  </li>
+<li>复制变量  </li>
+<li>传递参数  </li>
+<li>检测类型  </li>
+</ul>
+<h2 id="基本类型和引用类型的值"><a href="#基本类型和引用类型的值" class="headerlink" title="基本类型和引用类型的值"></a>基本类型和引用类型的值</h2><p>ECMAScript的变量存放的数据的数据类型有两种，其中一种是基本类型，另一种是引用类型。  </p>
+<ul>
+<li>基本类型<br>Undefined、Null、Boolean、Number和String这五种是基本数据类型，将一个值赋给变量时，解析器必须确定这个值是基本类型还是引用类型，如果是基本类型就是按值访问——可以操作保存在变量中的实际的值。  </li>
+<li>引用类型<br>对象数据类型是引用类型，引用类型的值是保存在对象中的。<del>C及类C语言是可以直接访问内存中的位置，也就是说能操作对象的内存空间</del>。但JavaScript不能这么干，它只能通过操作对象的引用访问，而不是操作实际的对象。所以，引用类型的值是按引用访问的。  </li>
+</ul>
+<p><strong>注意</strong>：<br>很多语言中String数据类型是以对象的形式来表示的，因此被认为是引用类型。<strong>但是在ECMAScript中，String数据类型不是引用类型。</strong></p>
+<h2 id="动态的属性"><a href="#动态的属性" class="headerlink" title="动态的属性"></a>动态的属性</h2><p>定义基本类型数值和引用类型数据类似，但是操作就有很大的不同了。  </p>
+<ul>
+<li>引用类型的值我们可以动态地添加属性与方法，例：  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	<span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>() ; <span class="comment">//定义一个对象  </span></span><br><span class="line">	person.name = <span class="string">"Nicholas"</span> ;<span class="comment">//动态地添加对象的属性  </span></span><br><span class="line">	alert(person.name);			<span class="comment">//Nicholas</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上面的代码，先创建一个对象存放于<code>person</code>变量中，动态地添加<code>person</code>对象的<code>name</code>属性值为<code>Nicholas</code>，最后用<code>alert(person.name);</code>输出动态添加的值。如果对象不被销毁，这个属性将一直存在。  </p>
+<ul>
+<li>基本类型就不能动态添加属性，虽然不会报错，但是无效，如下：  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	<span class="keyword">var</span> name = <span class="string">"Nicholas"</span> ;<span class="comment">//基本类型值</span></span><br><span class="line">	name.age = <span class="number">20</span> ;  <span class="comment">//动态添加属性</span></span><br><span class="line">	alert(name.age);  <span class="comment">//undefined</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>引用类型值可以动态添加属性，基本类型值不可以动态添加属性。  </p>
+<h2 id="复制变量"><a href="#复制变量" class="headerlink" title="复制变量"></a>复制变量</h2><p>从一个变量向另一个变量复制值的时候，基本类型的值和引用类型的值也不同。</p>
+<ul>
+<li>基本类型<br>如果用一个变量向另一个变量赋值，会先将第一个变量的值复制多一份，把副本赋值给第二个变量，两个变量的值相互独立，互不影响。如：  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> &lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"><span class="keyword">var</span> num1 = <span class="number">2</span> ;</span><br><span class="line"><span class="keyword">var</span> num2 = num1 ; </span><br><span class="line">num2 = <span class="number">10</span> ;  <span class="comment">//改变num2</span></span><br><span class="line">alert(num1);<span class="comment">//num1的值不变</span></span><br><span class="line"> &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>引用类型<br>当一个引用类型的变量向另一个变量赋值的时候，也是复制一份值放到另一个变量，不同的是这一份值是一个指针，这两个指针指向同一个放在堆内存中的对象。即两个变量两个指针一个对象，所以改变任何一个变量的对象的值，另一个变量的值也改变。  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> &lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> <span class="built_in">Object</span>() ;</span><br><span class="line"><span class="keyword">var</span> person2 = person1 ;</span><br><span class="line">person2.name = <span class="string">"Nicholas"</span> ; <span class="comment">//第二个变量增加name属性</span></span><br><span class="line">alert(person1.name);  <span class="comment">//第一个变量也有name属性了</span></span><br><span class="line"> &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h2><p>ECMAScript中所有函数的参数都是按值传递的。基本类型的参数传递比较好理解，跟两个变量赋值一样，把值复制出来一个副本传递给函数。而引用类型参数的传递跟引用类型的变量的复制一样，但是不好理解。访问变量有按值访问和按引用访问两种，而参数只能按值传递。  </p>
+<ul>
+<li><p>基本类型的参数传递<br>把全局变量<code>count</code>的值复制一个副本<code>20</code>赋给<code>num</code>，之后<code>num</code>的值跟<code>count</code>的值互不影响。<code>count</code>与<code>num</code>仅仅是有相同的值<code>20</code>，相互之间再也没有什么多余的关系了。假如是按引用传递，那<code>num</code>的值加<code>10</code>的时候<code>count</code>的值也应该加<code>10</code>。  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">addTen</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">		num += <span class="number">10</span> ;</span><br><span class="line">		<span class="keyword">return</span> num ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> count = <span class="number">20</span> ;</span><br><span class="line">	<span class="keyword">var</span> result = addTen(count) ;</span><br><span class="line">	alert(count);  <span class="comment">//20</span></span><br><span class="line">	alert(result);  <span class="comment">//30</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>引用类型的参数传递<br>引用类型的参数传递时，是把<code>person</code>的指针复制一个副本，把副本的值传递给函数的参数<code>obj</code>，这就叫<strong>按值传递</strong>。在函数内部增加<code>obj</code>对象的<code>name</code>属性时，是通过这个指针的值来<strong>按引用访问</strong>的，两个不同的指针指向同一个对象，按引用访问对象最终只能<code>person.name = &quot;Nicholas&quot;</code>。  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">setName</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">		obj.name = <span class="string">"Nicholas"</span> ;<span class="comment">//增加局部对象的name属性</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();<span class="comment">//全局对象</span></span><br><span class="line">	setName(person);<span class="comment">//传递引用类型参数</span></span><br><span class="line">	alert(person.name);<span class="comment">//全局的对象也改变</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>然后就造成这样一种现象，在函数内部修改<code>obj.name = &quot;Nicholas&quot; ;</code>，函数外部<code>person.name</code>也有所反映，<del>这是按引用传递的效果</del>。原因是<code>person</code>与<code>obj</code>指向的堆内存中的对象只有唯一的一个，而且是全局对象。然后有很多开发人员错误地认为：<strong><del>在局部作用域修改的对象在全局作用域中反映出来，这就说明参数是按引用传递的。</del></strong>我们再看一个例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">setName</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">		obj.name = <span class="string">"Nicholas"</span> ;<span class="comment">//增加局部对象的name属性</span></span><br><span class="line">		obj = <span class="keyword">new</span> <span class="built_in">Object</span>() ;  <span class="comment">//重新定义一个对象</span></span><br><span class="line">		obj.name = <span class="string">"Tony"</span> ;		<span class="comment">//为对象添加属性</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();<span class="comment">//全局对象</span></span><br><span class="line">	setName(person);<span class="comment">//传递引用类型参数</span></span><br><span class="line">	alert(person.name);<span class="comment">//Nicholas</span></span><br><span class="line">	<span class="comment">//找不到obj对象，局部对象在函数执行完就被销毁</span></span><br><span class="line">	alert(obj.name);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><code>obj.name = &quot;Nicholas&quot; ;</code>对旧对象添加属性，<code>obj = new Object() ;</code>定义新的对象，<code>obj.name = &quot;Tony&quot; ;</code>新的对象的属性。<code>alert(person.name);</code>最后输出查看<code>person</code>对象是新属性还是旧的属性。<strong><del>如果是按引用传递参数</del></strong>:<code>obj</code>定义新对象的时候，<code>person</code>也应该改变为指向新对象，因为引用传递参数意思是局部变量总能反映到全局变量中。而最后<code>alert(person.name);</code>是<code>Nicholas</code>说明函数内部修改了参数的值，但原始的引用没有改变，这是按值传递参数。实际上重新定义<code>obj</code>对象那一刻起，<code>obj</code>对象就是局部对象了，局部对象在函数执行完后立即被销毁，后面再输出就找不到对象了。  </p>
+<h2 id="检测类型"><a href="#检测类型" class="headerlink" title="检测类型"></a>检测类型</h2><p>数据类型有两种，基本类型和引用类型，那么我们检测的时个也是用两种方法的。  </p>
+<ul>
+<li><p>基本类型<br><code>typeof</code>操作符是确定一个基本类型变量的最好工具。用来判断对象就不好用了。</p>
+<pre><code class="javascript">&lt;script type=<span class="string">"text/javascript"</span>&gt;
+  <span class="keyword">var</span> s = <span class="string">"Nicholas"</span> ;
+  <span class="keyword">var</span> b = <span class="literal">true</span> ;
+  <span class="keyword">var</span> i = <span class="number">22</span> ;
+  <span class="keyword">var</span> u ;
+  <span class="keyword">var</span> n = <span class="literal">null</span> ;
+  <span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();
+
+  alert(<span class="keyword">typeof</span> s); <span class="comment">//String </span>
+  alert(<span class="keyword">typeof</span> b); <span class="comment">//boolean</span>
+  alert(<span class="keyword">typeof</span> i); <span class="comment">//number</span>
+  alert(<span class="keyword">typeof</span> u); <span class="comment">//undefined</span>
+  alert(<span class="keyword">typeof</span> n); <span class="comment">//object</span>
+  alert(<span class="keyword">typeof</span> o); <span class="comment">//object</span>
+&lt;<span class="regexp">/script&gt;</span>
+</code></pre>
+</li>
+<li>引用类型<br>ECMAScript提供的<code>instanceof</code>操作符能判断给定的对象与判断的对象类型是否一至。如果一至返回<code>true</code>。使用方法如下：<pre><code class="javascript">&lt;script type=<span class="string">"text/javascript"</span>&gt;
+  alert(person <span class="keyword">instanceof</span> <span class="built_in">Object</span>);
+  alert(colors <span class="keyword">instanceof</span> <span class="built_in">Array</span>);
+  alert(pattern <span class="keyword">instanceof</span> <span class="built_in">RegExp</span>);
+&lt;<span class="regexp">/script&gt;</span>
+</code></pre>
+所有的引用类型都是<code>Object</code>的实例，所以如果用<code>instanceof</code>检测一个引用类型和<code>Object</code>构造函数时，始终返回<code>true</code>。如果用来<code>instanceof</code>检测基本类型，始终返回<code>false</code>，因为基本类型不是对象。 </li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<li>ECMAScript有两种类型的值。</li>
+<li>引用类型能够动态添加属性。  </li>
+<li>两种类型复制变量的方式不同。  </li>
+<li>参数只能是按值传递，访问可以是按值访问和按引用访问。  </li>
+<li>确定一个值是哪种基本类型可以使用typeof操作符，而确定一个值是哪种引用类型可以用instanceof操作符。  </li>
+<li>基本类型的数值在内存中占有固定大小的空间，因此被保存在栈内存中。  </li>
+<li>从一个变量向另一个变量复制基本类型的值，会创建这个值的副本。  </li>
+<li>引用类型的值是对象，保存在堆内存中。  </li>
+<li>包含引用类型的变量实际上包含的并不是对象本身，而是指向对象的指针。  </li>
+<li>从一个变量向另一个变量复制引用类型的值，复制的其实是指针，因此两个变量指向同一个对象。  </li>
+</ol>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年12月14日 17:44</p>
+        <p>原始链接： <a class="post-url" href="/2017/03/29/variable/" title="变量可以包含的数值类型">http://allen.men/2017/03/29/variable/</a></p>
+        <footer>
+            <a href="http://allen.men">
+                <img src="/images/logo.png" alt="Allen">
+                Allen
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        收钱就是兴奋
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://allen.men/2017/03/29/variable/&title=《变量可以包含的数值类型》 — Allen's Blog&pic=http://allen.menimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://allen.men/2017/03/29/variable/&title=《变量可以包含的数值类型》 — Allen's Blog&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://allen.men/2017/03/29/variable/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《变量可以包含的数值类型》 — Allen's Blog&url=http://allen.men/2017/03/29/variable/&via=http://allen.men" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://allen.men/2017/03/29/variable/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://allen.men/2017/03/29/variable/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/前端/" class="color3">前端</a>
+      
+    <a href="/tags/基础/" class="color3">基础</a>
+      
+    <a href="/tags/javaScript/" class="color1">javaScript</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#变量可以包含的数值类型：基本类型和引用类型"><span class="post-toc-text">变量可以包含的数值类型：基本类型和引用类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本类型和引用类型的值"><span class="post-toc-text">基本类型和引用类型的值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#动态的属性"><span class="post-toc-text">动态的属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#复制变量"><span class="post-toc-text">复制变量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#传递参数"><span class="post-toc-text">传递参数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#检测类型"><span class="post-toc-text">检测类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-text">总结</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2017/03/29/garbage/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          垃圾收集
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2017/03/29/basis/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">JavaScript 基础1</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        simple is <a href="http://allen.men/404.html" target="_blank">beautiful</a> |
+        My name is <a href="//github.com/Allen151" target="_blank">潘栋民</a>
+      &copy; 2017 Allen<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://allen.men",
+      animate: false,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/JavaScript/">JavaScript</a><a class="category-link" href="/categories/NodeJs/">NodeJs</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/基础/" style="font-size: 20px;">基础</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/基础/" style="font-size: 20px;">基础</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>

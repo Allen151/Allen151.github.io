@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>表单验证 | Allen&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="潘栋民" />
+  
+  <meta name="description" content="表单验证表单验证是JS的另外一个特别的作用，也是JS诞生的原因。想了解更多JS的历史请上维基百科查看，更多精彩的文字内容我是说来出来的。   注册账号和登录账号的时候我们都用到过这个功能，如果我们不用JS验证表单，而是直接把内容提交到服务器验证的话，就会很慢，所以开始吧！ HTML的表单首做一个html表单： 1234">
+<meta name="keywords" content="前端,基础,javaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="表单验证">
+<meta property="og:url" content="http://allen.men/2017/03/29/regcheck/index.html">
+<meta property="og:site_name" content="Allen&#39;s Blog">
+<meta property="og:description" content="表单验证表单验证是JS的另外一个特别的作用，也是JS诞生的原因。想了解更多JS的历史请上维基百科查看，更多精彩的文字内容我是说来出来的。   注册账号和登录账号的时候我们都用到过这个功能，如果我们不用JS验证表单，而是直接把内容提交到服务器验证的话，就会很慢，所以开始吧！ HTML的表单首做一个html表单： 12345678910111213141516171819202122232425262">
+<meta property="og:updated_time" content="2017-12-14T09:42:53.149Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="表单验证">
+<meta name="twitter:description" content="表单验证表单验证是JS的另外一个特别的作用，也是JS诞生的原因。想了解更多JS的历史请上维基百科查看，更多精彩的文字内容我是说来出来的。   注册账号和登录账号的时候我们都用到过这个功能，如果我们不用JS验证表单，而是直接把内容提交到服务器验证的话，就会很慢，所以开始吧！ HTML的表单首做一个html表单： 12345678910111213141516171819202122232425262">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Allen&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Allen&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        It&#39;s never too old to learn
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="home"  href="//allen.men">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/allen151">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="https://weibo.com/allen151">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//404.html">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                        <a title="Google" target="_blank" href="//allen.men/404.html">
+                            <i class="fa fa-google fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-regcheck" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      表单验证
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/JavaScript/">JavaScript</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-03-29
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h1 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h1><p><strong>表单验证是JS的另外一个特别的作用，也是JS诞生的原因。想了解更多JS的历史请上维基百科查看，更多精彩的文字内容我是说来出来的。</strong>  </p>
+<h4 id="注册账号和登录账号的时候我们都用到过这个功能，如果我们不用JS验证表单，而是直接把内容提交到服务器验证的话，就会很慢，所以开始吧！"><a href="#注册账号和登录账号的时候我们都用到过这个功能，如果我们不用JS验证表单，而是直接把内容提交到服务器验证的话，就会很慢，所以开始吧！" class="headerlink" title="注册账号和登录账号的时候我们都用到过这个功能，如果我们不用JS验证表单，而是直接把内容提交到服务器验证的话，就会很慢，所以开始吧！"></a>注册账号和登录账号的时候我们都用到过这个功能，如果我们不用JS验证表单，而是直接把内容提交到服务器验证的话，就会很慢，所以开始吧！</h4><ul>
+<li><p>HTML的表单<br>首做一个html表单：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">action</span>=<span class="string">""</span> <span class="attr">onsubmit</span>=<span class="string">"return eg.regCheck();"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"errnum"</span> <span class="attr">value</span>=<span class="string">"0"</span> /&gt;</span><span class="comment">&lt;!--记录错误次数--&gt;</span></span><br><span class="line">	账户:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"userid"</span>/&gt;</span> <span class="tag">&lt;<span class="name">br</span> /&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">	密码:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"userpwd"</span>/&gt;</span> <span class="tag">&lt;<span class="name">br</span> /&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">	确认:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"userpwd2"</span>/&gt;</span> <span class="tag">&lt;<span class="name">br</span> /&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">	邮箱:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"email"</span>/&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">	性别:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">value</span>=<span class="string">"1"</span> <span class="attr">checked</span>=<span class="string">"checked"</span>/&gt;</span>男</span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">value</span>=<span class="string">"0"</span> /&gt;</span>女 <span class="tag">&lt;<span class="name">br</span> /&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">	年龄:</span><br><span class="line">	<span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"age"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"0"</span> <span class="attr">selected</span>=<span class="string">"selected"</span>&gt;</span>请选择年龄段<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span>18岁以下<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"2"</span>&gt;</span>18-24岁<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">vlaue</span>=<span class="string">"3"</span>&gt;</span>24-30岁<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"4"</span>&gt;</span>30-35岁<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"5"</span>&gt;</span>35岁以上<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">select</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">	爱好:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"like"</span> <span class="attr">value</span>=<span class="string">"1"</span> <span class="attr">class</span>=<span class="string">"like"</span>/&gt;</span>上网</span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"like"</span> <span class="attr">value</span>=<span class="string">"2"</span> <span class="attr">class</span>=<span class="string">"like"</span>/&gt;</span>逛街</span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"like"</span> <span class="attr">value</span>=<span class="string">"3"</span> <span class="attr">class</span>=<span class="string">"like"</span>/&gt;</span>看电影</span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"like"</span> <span class="attr">value</span>=<span class="string">"4"</span> <span class="attr">class</span>=<span class="string">"like"</span>/&gt;</span>其他<span class="tag">&lt;<span class="name">br</span> /&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">	简介:<span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">rows</span>=<span class="string">"4"</span> <span class="attr">cols</span>=<span class="string">"18"</span> <span class="attr">id</span>=<span class="string">"about"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"注册"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"regBtn"</span> <span class="attr">style</span>=<span class="string">"display: block;"</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"unlockNum"</span> <span class="attr">value</span>=<span class="string">"0"</span>/&gt;</span><span class="comment">&lt;!--记录解锁次数--&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"解锁"</span> <span class="attr">style</span>=<span class="string">"display: none;"</span> <span class="attr">id</span>=<span class="string">"regUnlock"</span> <span class="attr">onclick</span>=<span class="string">"eg.unlock();"</span> <span class="attr">name</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">  ```  </span><br><span class="line">  - 以上的各个元素都有自己的唯一id，各个标签都是html的基本标签，应该比较好理解。  </span><br><span class="line">  - form返回JS的eg.regCheck()方法的调用结果。详细在JS篇。</span><br><span class="line">  - id为errnum的元素是用来记录填写信息错误的次数。不需要被用户看到，所以隐藏`type="hidden"`。</span><br><span class="line">  - 性别选择的`type="radio"`，只能选中其中的一项，`checked="checked"`，代码默认选中。</span><br><span class="line">  - 年龄是下拉单选项，`value`用来标记选中的项，`selected="selected"`代码默认选中。</span><br><span class="line">  - 爱好是`type="checkbox"`，多项选择，name、class相同，用于获取全部爱好标签。value不同，用来区分不同内容。</span><br><span class="line">  - 注册的类型`type="submit"`，点击时触动form调用的方法。</span><br><span class="line">  - 解锁的次数是个多余的功能。</span><br><span class="line">  - 解锁按钮是当注册错误达到3次时才会出现。</span><br><span class="line">- JS篇</span><br><span class="line">  - 创建自己的命名空间</span><br><span class="line">  ```javascript</span><br><span class="line">    var eg = &#123;&#125; ;//声明一个对象，做命名空间</span><br><span class="line">    eg.$ = function(id)&#123;//定义一个公共函数，用于取得元素对象</span><br><span class="line">	  return document.getElementById(id);</span><br><span class="line">	&#125;;</span><br><span class="line">  ```  </span><br><span class="line">    每次传递id参数调用`eg.$(id)`方法就可以获取对象的对象。</span><br><span class="line">  - eg.regCheck()方法详细介绍  </span><br><span class="line">  **以验证账号为例** </span><br><span class="line">  ```javascript</span><br><span class="line">  eg.regCheck = function()&#123;//点击事件</span><br><span class="line">	var userid = eg.$("userid");</span><br><span class="line">	if(userid.value == "")&#123;</span><br><span class="line">		alert("账号不能为空");</span><br><span class="line">		eg.err();</span><br><span class="line">		return false ;</span><br><span class="line">	&#125;</span><br><span class="line">	return true ;</span><br><span class="line">  &#125;</span><br><span class="line">  ```  </span><br><span class="line">  取得对象，判断值如果为空就提示用户，并且调用`eg.err()`方法，返回false表示注册失败。  </span><br><span class="line">  **eg.err()方法**   </span><br><span class="line">  ```javascript</span><br><span class="line">  eg.err = function()&#123;</span><br><span class="line">	var el = eg.$("errnum");</span><br><span class="line">	var old = el.value;</span><br><span class="line">	el.value = parseInt(old) + 1 ;//强制转换为整形</span><br><span class="line">	eg.lock();//检查是否锁定</span><br><span class="line">	&#125;;</span><br></pre></td></tr></table></figure>
+<p>取得记录错误次数的值，为其值加1，调用<code>eg.lock()</code>方法，判断是否应该锁定按钮。<br><strong>eg.lock()方法</strong>  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"> eg.lock = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="keyword">var</span> err = eg.$(<span class="string">"errnum"</span>);</span><br><span class="line"><span class="keyword">if</span>(err.value &gt; <span class="number">2</span>)&#123;</span><br><span class="line">	eg.$(<span class="string">"regBtn"</span>).disabled = <span class="literal">true</span> ;<span class="comment">//锁定按键</span></span><br><span class="line">	eg.$(<span class="string">"regUnlock"</span>).style.display=<span class="string">"block"</span>;<span class="comment">//显示解锁按键</span></span><br><span class="line">	err.value = <span class="number">0</span> ;<span class="comment">//清除错误次数</span></span><br><span class="line">&#125;</span><br><span class="line"> &#125;;</span><br><span class="line"> <span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string"> 取得错误次数，如果错误的次数在3次以上，就将注册按钮锁定，同时将解锁按钮显示出来，最后将错误次数清零。  </span></span><br><span class="line"><span class="string"> **解锁之后的事情**  </span></span><br><span class="line"><span class="string"> 我们回到HTML的最后一行找到`</span>onclick=<span class="string">"eg.unlock();"</span><span class="string">`，解锁后调用eg.unlock()方法，我们看看此方法做了哪些操作。  </span></span><br><span class="line"><span class="string"> **eg.unlock()方法**  </span></span><br><span class="line"><span class="string"> `</span><span class="string">``</span>javascript  </span><br><span class="line"> eg.unlock = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">eg.$(<span class="string">"regBtn"</span>).disabled = <span class="literal">false</span> ;<span class="comment">//解锁按键</span></span><br><span class="line">eg.$(<span class="string">"regUnlock"</span>).style.display = <span class="string">"none"</span> ;<span class="comment">//隐藏解锁按键</span></span><br><span class="line"><span class="keyword">var</span> rl = eg.$(<span class="string">"unlockNum"</span>);<span class="comment">//解锁次数</span></span><br><span class="line"><span class="keyword">var</span> unlockNum = rl.value ;</span><br><span class="line"><span class="keyword">if</span>(unlockNum &lt;= <span class="number">1</span>)&#123;<span class="comment">//第一次解锁</span></span><br><span class="line">	alert(<span class="string">"再给三次机会你！！"</span>);</span><br><span class="line">	rl.value = <span class="number">2</span> ;</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(unlockNum == <span class="number">2</span>)&#123;<span class="comment">//第二次解锁</span></span><br><span class="line">	alert(<span class="string">"最后三次机会！！！"</span>);</span><br><span class="line">	rl.value = <span class="number">3</span> ;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;<span class="comment">//第三次解锁</span></span><br><span class="line">	alert(<span class="string">"你已经没机会了，请联系管理员！！"</span>);</span><br><span class="line">	eg.$(<span class="string">"regUnlock"</span>).style.display=<span class="string">"none"</span>;<span class="comment">//两个按键都隐藏</span></span><br><span class="line">	eg.$(<span class="string">"regBtn"</span>).style.display=<span class="string">"none"</span>;</span><br><span class="line">&#125;</span><br><span class="line"> &#125;;</span><br></pre></td></tr></table></figure>
+<p>将注册按钮打开，解锁按钮隐藏，取得解锁的次数，根据解锁的次数给出不同的提示，第三次解锁就将两个按钮都隐藏起来，阻止你继续注册。<br><del><strong>到这里呢，简单的表单验证已经结束了！</strong></del>  </p>
+</li>
+<li>我们来讨论一下不简单的东西。  <ul>
+<li>邮箱验证  <pre><code class="javascript"><span class="keyword">if</span>(!<span class="regexp">/^[A-Za-z\d]+[A-Za-z\d\-_\.]*@([A-Za-z\d]+[A-Za-z\d\-]*\.)+[A-Za-z]{2,4}$/</span>.test(email.value)){
+<span class="comment">//正则表达式验证邮箱</span>
+alert(<span class="string">"请输入正确的邮箱！！"</span>);
+eg.err();
+<span class="keyword">return</span> <span class="literal">false</span> ;
+}
+</code></pre>
+这是正则表达式，我现在还没弄明白。如果你们要用，可以直接百度代码使用。后面我学习到了再做相应的解释。</li>
+<li>通过className获得元素对象  <pre><code class="javascript"><span class="keyword">var</span> likes = eg.getElementsByClassName(<span class="string">"like"</span>);<span class="comment">//所有爱好的标签  </span>
+eg.getElementsByClassName = <span class="function"><span class="keyword">function</span>(<span class="params">className, element</span>)</span>{
+<span class="keyword">if</span>(<span class="built_in">document</span>.getElementsByClassName){
+    <span class="keyword">return</span> (element || <span class="built_in">document</span>).getElementsByClassName(className);
+}
+<span class="keyword">var</span> children = (element || <span class="built_in">document</span>).getElementsByTagName(<span class="string">"*"</span>);
+<span class="keyword">var</span> elements = <span class="keyword">new</span> <span class="built_in">Array</span>();
+<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;children.length;i++){
+    <span class="keyword">var</span> child = children[i];
+    <span class="keyword">var</span> classNames = child.className.split(<span class="string">' '</span>);
+    <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;classNames.length;j++){
+        <span class="keyword">if</span>(classNames[j] == className){
+            elements.push(child);
+            <span class="keyword">break</span> ;
+        }
+    }
+} 
+<span class="keyword">return</span> elements;
+};
+</code></pre>
+有些浏览器兼容<code>getElementByClassName()</code>方法，我们为它的兼容性写了一个方法，如果浏览器兼容，就直接调用方法，如果不兼容就用一个循环遍历所有的标签，如果有className符合我们的要求就放进数组。</li>
+</ul>
+</li>
+</ul>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年12月14日 17:42</p>
+        <p>原始链接： <a class="post-url" href="/2017/03/29/regcheck/" title="表单验证">http://allen.men/2017/03/29/regcheck/</a></p>
+        <footer>
+            <a href="http://allen.men">
+                <img src="/images/logo.png" alt="Allen">
+                Allen
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        收钱就是兴奋
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://allen.men/2017/03/29/regcheck/&title=《表单验证》 — Allen's Blog&pic=http://allen.menimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://allen.men/2017/03/29/regcheck/&title=《表单验证》 — Allen's Blog&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://allen.men/2017/03/29/regcheck/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《表单验证》 — Allen's Blog&url=http://allen.men/2017/03/29/regcheck/&via=http://allen.men" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://allen.men/2017/03/29/regcheck/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://allen.men/2017/03/29/regcheck/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/前端/" class="color3">前端</a>
+      
+    <a href="/tags/基础/" class="color3">基础</a>
+      
+    <a href="/tags/javaScript/" class="color1">javaScript</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#表单验证"><span class="post-toc-text">表单验证</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#注册账号和登录账号的时候我们都用到过这个功能，如果我们不用JS验证表单，而是直接把内容提交到服务器验证的话，就会很慢，所以开始吧！"><span class="post-toc-text">注册账号和登录账号的时候我们都用到过这个功能，如果我们不用JS验证表单，而是直接把内容提交到服务器验证的话，就会很慢，所以开始吧！</span></a></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2017/03/29/quote/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          引用对象
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2017/03/29/runjs/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">运行JavaScritp</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        simple is <a href="http://allen.men/404.html" target="_blank">beautiful</a> |
+        My name is <a href="//github.com/Allen151" target="_blank">潘栋民</a>
+      &copy; 2017 Allen<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://allen.men",
+      animate: false,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/JavaScript/">JavaScript</a><a class="category-link" href="/categories/NodeJs/">NodeJs</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/基础/" style="font-size: 20px;">基础</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/基础/" style="font-size: 20px;">基础</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>

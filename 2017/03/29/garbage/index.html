@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>垃圾收集 | Allen&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="潘栋民" />
+  
+  <meta name="description" content="垃圾收集学习每一种语言都要学习垃圾回收，才能码出性能强的代码。但是现在学这些东西，感觉到很困惑。那有什么办法。javascript是一门具有自动垃圾收集机制的编程语言，开发人员不用关心内存分配和回收问题。javascript具有自动垃圾收集机制，也就是说执行环境会管理代码执行使用的内存情况。C语言和C++之类的语言开发">
+<meta name="keywords" content="前端,基础,javaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="垃圾收集">
+<meta property="og:url" content="http://allen.men/2017/03/29/garbage/index.html">
+<meta property="og:site_name" content="Allen&#39;s Blog">
+<meta property="og:description" content="垃圾收集学习每一种语言都要学习垃圾回收，才能码出性能强的代码。但是现在学这些东西，感觉到很困惑。那有什么办法。javascript是一门具有自动垃圾收集机制的编程语言，开发人员不用关心内存分配和回收问题。javascript具有自动垃圾收集机制，也就是说执行环境会管理代码执行使用的内存情况。C语言和C++之类的语言开发人员的一项重要工作就是手工跟踪内存的使用情况。javascript开发人员不用再">
+<meta property="og:updated_time" content="2017-12-14T09:41:51.895Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="垃圾收集">
+<meta name="twitter:description" content="垃圾收集学习每一种语言都要学习垃圾回收，才能码出性能强的代码。但是现在学这些东西，感觉到很困惑。那有什么办法。javascript是一门具有自动垃圾收集机制的编程语言，开发人员不用关心内存分配和回收问题。javascript具有自动垃圾收集机制，也就是说执行环境会管理代码执行使用的内存情况。C语言和C++之类的语言开发人员的一项重要工作就是手工跟踪内存的使用情况。javascript开发人员不用再">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Allen&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Allen&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        It&#39;s never too old to learn
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="home"  href="//allen.men">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/allen151">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="https://weibo.com/allen151">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//404.html">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                        <a title="Google" target="_blank" href="//allen.men/404.html">
+                            <i class="fa fa-google fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-garbage" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      垃圾收集
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/JavaScript/">JavaScript</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-03-29
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h1 id="垃圾收集"><a href="#垃圾收集" class="headerlink" title="垃圾收集"></a>垃圾收集</h1><p>学习每一种语言都要学习垃圾回收，才能码出性能强的代码。但是现在学这些东西，感觉到很困惑。那有什么办法。<br>javascript是一门具有自动垃圾收集机制的编程语言，开发人员不用关心内存分配和回收问题。<br>javascript具有自动垃圾收集机制，也就是说执行环境会管理代码执行使用的内存情况。C语言和C++之类的语言开发人员的一项重要工作就是手工跟踪内存的使用情况。javascript开发人员不用再关心内存的使用问题，内存的分配及回收完全实现自动管理。原理很简单，找到不用的变量，释放其占用的内存就可以。可以按固定的时间间隔或设定时间间隔周期性地执行回收这一操作。<br>局部变量的正常生命周期：函数执行过程中存在，执行中会为变量分配相应的栈或堆内存。执行完函数后，变量所占的内存就是垃圾，就要清理。垃圾收集器会标记这些无用的内存，到了清理时间就清理。不同的浏览器会有不同的无用变量标记方法。<br>本文目录  </p>
+<ul>
+<li>标记清除  </li>
+<li>引用计数  </li>
+<li>性能问题  </li>
+<li>管理内存</li>
+</ul>
+<hr>
+<h2 id="标记清除"><a href="#标记清除" class="headerlink" title="标记清除"></a>标记清除</h2><p>标记清除是javascript最常用的垃圾收集方式。当进行执行环境时，对执行环境中的所有变量标记为进入环境，逻辑上讲是不能清除标记为进入环境的变量的。离开环境后就标记为离开环境，垃圾收集机制就是清除这部分。不同的浏览器用不同的方法标记，不同浏览器的清除的间隔也不同。这些问题太复制了，看不懂……</p>
+<h2 id="引用计数"><a href="#引用计数" class="headerlink" title="引用计数"></a>引用计数</h2><p>引用计数方法不常用。用引用计数的方法来记录变量引用的次数，被引用就加1，断开引用就减1，直到引用次数为0就代码待清除。<br>这里有一个问题，如果有两个变量相互引用的话，那就永远成不了垃圾了，这是它的不好处，所以这种方式不好。<br>所以对不用的引用变量，我们最好手动地为其赋值为null来释放其引用，这叫——<strong>解除引用</strong>。</p>
+<h2 id="性能问题"><a href="#性能问题" class="headerlink" title="性能问题"></a>性能问题</h2><p>这里垃圾回收而引发的性能问题，IE浏览器就最显著，IE浏览器垃圾收集器根据内存的分配量来决定运行的，满足256个变量、4096个对象（数组/字面量/数组元素）或者64KB的字符串中任何一个临界值，就运行垃圾回收。如果一个脚本一直没有达到这个临界值，那就永远不回收，如果非垃圾变量一直有这个值就一直执行垃圾回收。结果性能就很差，IE7就重写了其垃圾回收例程。<br>触发垃圾回收：<br>  在IE中，window.CollectGarbage()方法会立即执行收集。<br>  Opera7用window.opera.collect()方法也会启动垃圾收集例程。<br>但不建议这么干。</p>
+<h2 id="管理内存"><a href="#管理内存" class="headerlink" title="管理内存"></a>管理内存</h2><p>使用具备垃圾收集机制语言编写程序时，开发人员一般不用操心内存管理。但是javascript还是有点特别的，主要问题是——<strong>分配给web浏览器的可用内存通常比分配给桌面应用程序的少</strong>。这么做是出于安全考虑，防止不好的javascript代码耗尽内存导致系统崩溃。内存的限制导致变量得到的内存少，还会影响调用栈以及在一个线程中能够同时执行的语句数量。<br>所以，确保占用最少内存可以让页面性能更好。优化性能最佳方式是用<strong>解除引用</strong>的方法，这一做法适用于大多数全局变量和全局对象的属性，局部的会在离开执行环境时自动解除引用了。<br>解除一个值的引用并不是说自动回收该值的内存了，只是让该值脱离执行环境，以便垃圾收集机制在下次运行时回收。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<li>标记清除是最常用的垃圾收集策略，这种算法的思想是给当前不使用的值加上标记，然后再回收其内存。  </li>
+<li>引用计数也是一种收集策略，这种算法的思想是跟踪记录所有被引用的次数。javascript引擎目前都不再使用这种算法，但是在IE中访问非原生javascript对象（如DOM元素）时，这种算法仍然可能会导致问题。  </li>
+<li>当代码中存在循环引用现象时，“引用计数”算法就会导致问题。</li>
+<li>javascript开发人员应该怎么管理内存呢。  </li>
+<li>离开作用域的值将被标记为可回收，因此在垃圾回收期间被删除。  </li>
+<li>解除变量不仅有助于消除循环引用现象，而且对垃圾收集也有好处。为了确保有效地回收内存，应该及时解除不再使用的全局对象、全局对象属性以及循环引用变量的引用。</li>
+</ol>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年12月14日 17:41</p>
+        <p>原始链接： <a class="post-url" href="/2017/03/29/garbage/" title="垃圾收集">http://allen.men/2017/03/29/garbage/</a></p>
+        <footer>
+            <a href="http://allen.men">
+                <img src="/images/logo.png" alt="Allen">
+                Allen
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        收钱就是兴奋
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://allen.men/2017/03/29/garbage/&title=《垃圾收集》 — Allen's Blog&pic=http://allen.menimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://allen.men/2017/03/29/garbage/&title=《垃圾收集》 — Allen's Blog&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://allen.men/2017/03/29/garbage/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《垃圾收集》 — Allen's Blog&url=http://allen.men/2017/03/29/garbage/&via=http://allen.men" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://allen.men/2017/03/29/garbage/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://allen.men/2017/03/29/garbage/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/前端/" class="color3">前端</a>
+      
+    <a href="/tags/基础/" class="color3">基础</a>
+      
+    <a href="/tags/javaScript/" class="color1">javaScript</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#垃圾收集"><span class="post-toc-text">垃圾收集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#标记清除"><span class="post-toc-text">标记清除</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#引用计数"><span class="post-toc-text">引用计数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#性能问题"><span class="post-toc-text">性能问题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#管理内存"><span class="post-toc-text">管理内存</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-text">总结</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2017/04/29/modules_use/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          模块的调用
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2017/03/29/variable/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">变量可以包含的数值类型</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        simple is <a href="http://allen.men/404.html" target="_blank">beautiful</a> |
+        My name is <a href="//github.com/Allen151" target="_blank">潘栋民</a>
+      &copy; 2017 Allen<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://allen.men",
+      animate: false,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/JavaScript/">JavaScript</a><a class="category-link" href="/categories/NodeJs/">NodeJs</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/基础/" style="font-size: 20px;">基础</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/基础/" style="font-size: 20px;">基础</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>

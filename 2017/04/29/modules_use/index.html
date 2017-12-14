@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>模块的调用 | Allen&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="潘栋民" />
+  
+  <meta name="description" content="模块的调用这里的使用，效果有些像java里的类，能做一些像java里的类那样的操作。   简单类的调用上节我们学过怎么把另一个文件夹的的方法引进来使用，这节在上一节的基础上添加一些功能。下面这个虽然是一个方法，但是能像类一样工作。应该不难看懂，就不多说了。1234567891011function User()&amp">
+<meta name="keywords" content="前端,基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模块的调用">
+<meta property="og:url" content="http://allen.men/2017/04/29/modules_use/index.html">
+<meta property="og:site_name" content="Allen&#39;s Blog">
+<meta property="og:description" content="模块的调用这里的使用，效果有些像java里的类，能做一些像java里的类那样的操作。   简单类的调用上节我们学过怎么把另一个文件夹的的方法引进来使用，这节在上一节的基础上添加一些功能。下面这个虽然是一个方法，但是能像类一样工作。应该不难看懂，就不多说了。1234567891011function User()&amp;#123;	this.id ;	this.name ;	this.age ;	this">
+<meta property="og:updated_time" content="2017-12-14T09:42:04.294Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="模块的调用">
+<meta name="twitter:description" content="模块的调用这里的使用，效果有些像java里的类，能做一些像java里的类那样的操作。   简单类的调用上节我们学过怎么把另一个文件夹的的方法引进来使用，这节在上一节的基础上添加一些功能。下面这个虽然是一个方法，但是能像类一样工作。应该不难看懂，就不多说了。1234567891011function User()&amp;#123;	this.id ;	this.name ;	this.age ;	this">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Allen&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Allen&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        It&#39;s never too old to learn
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="home"  href="//allen.men">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/allen151">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="https://weibo.com/allen151">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//404.html">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                        <a title="Google" target="_blank" href="//allen.men/404.html">
+                            <i class="fa fa-google fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-modules_use" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      模块的调用
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/JavaScript/">JavaScript</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-04-29
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h1 id="模块的调用"><a href="#模块的调用" class="headerlink" title="模块的调用"></a>模块的调用</h1><p>这里的使用，效果有些像java里的<del>类</del>，能做一些像java里的类那样的操作。  </p>
+<h2 id="简单类的调用"><a href="#简单类的调用" class="headerlink" title="简单类的调用"></a>简单类的调用</h2><p>上节我们学过怎么把另一个文件夹的的方法引进来使用，这节在上一节的基础上添加一些功能。下面这个虽然是一个方法，但是能像类一样工作。应该不难看懂，就不多说了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">User</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.id ;</span><br><span class="line">	<span class="keyword">this</span>.name ;</span><br><span class="line">	<span class="keyword">this</span>.age ;</span><br><span class="line">	<span class="keyword">this</span>.enter = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.name+<span class="string">"进入图书馆"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//将方法映射出来</span></span><br><span class="line"><span class="built_in">module</span>.exports = User ;</span><br></pre></td></tr></table></figure></p>
+<p>上一节我们也说过创建一个服务必不可少的代码，是像下面那样，那我们以后的笔记只，必要的代码就不说了，只说几个重要的操作代码。必要代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>) ;</span><br><span class="line"></span><br><span class="line"><span class="comment">//在这里写我们要引入的模块</span></span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">	<span class="comment">//请求头部</span></span><br><span class="line">	res.writeHead(<span class="number">200</span>,&#123;<span class="string">"Content-Type"</span> : <span class="string">"text/plain; charset=utf-8"</span>&#125;);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(req.url !== <span class="string">"/favicon.ico"</span>)&#123;</span><br><span class="line">	<span class="comment">//在这里写我们需要操作的代码。</span></span><br><span class="line">	</span><br><span class="line">		res.end(<span class="string">""</span>);	</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;).listen(<span class="number">1337</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"Server running at http://127.0.0.1:1337"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>下面这个代码是我们使用上面的那个类的代码。：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将类引进来</span></span><br><span class="line"><span class="keyword">var</span> User = <span class="built_in">require</span>(<span class="string">"./modules/User.js"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//实例化一个对象</span></span><br><span class="line"><span class="keyword">var</span> user = <span class="keyword">new</span> User();</span><br><span class="line"><span class="comment">//使用实例化的对象，为对象的属性赋值</span></span><br><span class="line">user.id = <span class="string">"1"</span> ;</span><br><span class="line">user.name = <span class="string">"Allen"</span> ;</span><br><span class="line">user.age = <span class="number">21</span> ;</span><br><span class="line">user.enter();<span class="comment">//调用类中的方法</span></span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string">就是像这么使用。  </span></span><br><span class="line"><span class="string">但是这样但还不是很好，id、name、age这些参数的接收还不太好，所以我们就修改如下：这样的调用就更明了了。  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line"><span class="comment">//-----------User.js-------------------</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">User</span>(<span class="params">id, name, age</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.id = id;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.age = age;</span><br><span class="line">	<span class="keyword">this</span>.enter = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.name+<span class="string">"进入图书馆"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//将方法映射出来</span></span><br><span class="line"><span class="built_in">module</span>.exports = User ;</span><br><span class="line"></span><br><span class="line"><span class="comment">//-----------ch_3.js----------------------</span></span><br><span class="line">	<span class="keyword">var</span> user = <span class="keyword">new</span> User(<span class="number">1</span>, <span class="string">"Allen"</span>, <span class="number">20</span>);</span><br><span class="line">	user.enter();</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="继承类的调用"><a href="#继承类的调用" class="headerlink" title="继承类的调用"></a>继承类的调用</h2><p>类似<code>java</code>中的继承类的使用。<code>user</code>是用户，用户可以是老师，可以是学生，老师和学生有相同的属性也有不同的属性。那我们就要用到继承了。<br>在<code>User.js</code>相同的目录下创建一个<code>Teacher.js</code>文件，代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将User类引导进来</span></span><br><span class="line"><span class="keyword">var</span> User = <span class="built_in">require</span>(<span class="string">"./User"</span>) ;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Teacher</span>(<span class="params">id, name, age</span>)</span>&#123;</span><br><span class="line">	<span class="comment">//将User应用进来，相当于java中的实现类的继承操作</span></span><br><span class="line">	User.apply(<span class="keyword">this</span>, [id, name, age]);</span><br><span class="line">	<span class="comment">//子类的新方法</span></span><br><span class="line">	<span class="keyword">this</span>.teach = <span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">		res.write(<span class="keyword">this</span>.name+<span class="string">"在讲课"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//将Teacher类映射出去</span></span><br><span class="line"><span class="built_in">module</span>.exports = Teacher ;</span><br></pre></td></tr></table></figure></p>
+<p>那我们现在的下一步就是要使用上面的<code>Teacher</code>类了。直接将Teacher类引导进来，调用父类的方法，调用自己的方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引用继承类的模块，跳过User，直接使用Teacher  </span></span><br><span class="line"><span class="keyword">var</span> Teacher = <span class="built_in">require</span>(<span class="string">"./modules/Teacher"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//引用继承类的模块，相当于实例化对象</span></span><br><span class="line"><span class="keyword">var</span> teacher = <span class="keyword">new</span> Teacher(<span class="number">1</span>, <span class="string">"张老师"</span>, <span class="number">40</span>);</span><br><span class="line">teacher.enter();<span class="comment">//调用父类的方法</span></span><br><span class="line">teacher.teach(res);<span class="comment">//调用自己的方法</span></span><br></pre></td></tr></table></figure></p>
+<p>那来到这里，我们就学会的类的调用，与类的继承的调用了。那我们还可以再写一个类的继承，学生的类的还没写呢。  </p>
+<h2 id="学生类的继承"><a href="#学生类的继承" class="headerlink" title="学生类的继承"></a>学生类的继承</h2><p>也是跟上面Teacher类的继承一样。我也进行了练习，所以，我只贴代码出来算了。不再重复记笔记。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//------------Student.js---------------</span></span><br><span class="line"><span class="keyword">var</span> User = <span class="built_in">require</span>(<span class="string">"./User"</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">id, name, age</span>)</span>&#123;</span><br><span class="line">	User.apply(<span class="keyword">this</span>, [id, name, age]);</span><br><span class="line">	<span class="keyword">this</span>.study = <span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">		res.write(<span class="keyword">this</span>.name+<span class="string">"学会了自己学习"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = Student ;</span><br><span class="line"></span><br><span class="line"><span class="comment">//------------ch_3.js-------------------------</span></span><br><span class="line"><span class="keyword">var</span> Student = <span class="built_in">require</span>(<span class="string">"./modules/Student"</span>);</span><br><span class="line"><span class="keyword">var</span> student = <span class="keyword">new</span> Student(<span class="number">1</span>, <span class="string">"小明"</span>, <span class="number">12</span>) ;</span><br><span class="line">student.enter();</span><br><span class="line">student.study(res);</span><br><span class="line"><span class="string">``</span><span class="string">`  </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">## 学习到的新代码  </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line"><span class="comment">//创建一个对象  </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">User</span>(<span class="params">id, name, age</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//实例化一个对象，调用对象里的方法</span></span><br><span class="line"><span class="keyword">var</span> user = <span class="keyword">new</span> User(<span class="number">1</span>, <span class="string">"Allen"</span>, <span class="number">20</span>);</span><br><span class="line">user.enter();</span><br><span class="line"></span><br><span class="line"><span class="comment">//继承一个父类，得到接口，实用上父类，自己的函数，抛出接口</span></span><br><span class="line"><span class="keyword">var</span> User = <span class="built_in">require</span>(<span class="string">"./User"</span>) ;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Teacher</span>(<span class="params">id, name, age</span>)</span>&#123;</span><br><span class="line">	<span class="comment">//将User应用进来，相当于java中的实现类的继承操作</span></span><br><span class="line">	User.apply(<span class="keyword">this</span>, [id, name, age]);</span><br><span class="line">	<span class="keyword">this</span>.teach = <span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">		res.write(<span class="keyword">this</span>.name+<span class="string">"在讲课"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = Teacher ;<span class="comment">//抛出接口</span></span><br><span class="line"><span class="comment">//使用继承类跟使用类一样，不多说。</span></span><br></pre></td></tr></table></figure></p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年12月14日 17:42</p>
+        <p>原始链接： <a class="post-url" href="/2017/04/29/modules_use/" title="模块的调用">http://allen.men/2017/04/29/modules_use/</a></p>
+        <footer>
+            <a href="http://allen.men">
+                <img src="/images/logo.png" alt="Allen">
+                Allen
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        收钱就是兴奋
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://allen.men/2017/04/29/modules_use/&title=《模块的调用》 — Allen's Blog&pic=http://allen.menimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://allen.men/2017/04/29/modules_use/&title=《模块的调用》 — Allen's Blog&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://allen.men/2017/04/29/modules_use/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《模块的调用》 — Allen's Blog&url=http://allen.men/2017/04/29/modules_use/&via=http://allen.men" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://allen.men/2017/04/29/modules_use/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://allen.men/2017/04/29/modules_use/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/前端/" class="color3">前端</a>
+      
+    <a href="/tags/基础/" class="color3">基础</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#模块的调用"><span class="post-toc-text">模块的调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简单类的调用"><span class="post-toc-text">简单类的调用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#继承类的调用"><span class="post-toc-text">继承类的调用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#学生类的继承"><span class="post-toc-text">学生类的继承</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2017/05/29/function/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          函数的调用
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2017/03/29/garbage/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">垃圾收集</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        simple is <a href="http://allen.men/404.html" target="_blank">beautiful</a> |
+        My name is <a href="//github.com/Allen151" target="_blank">潘栋民</a>
+      &copy; 2017 Allen<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://allen.men",
+      animate: false,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/JavaScript/">JavaScript</a><a class="category-link" href="/categories/NodeJs/">NodeJs</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/基础/" style="font-size: 20px;">基础</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/基础/" style="font-size: 20px;">基础</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>
